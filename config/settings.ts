@@ -1,7 +1,7 @@
 //! SHARED CONSTANTE DO NOT DELETE
 
 //* APP NAME
-export const APPLICATION_NAME = 'sanofi';
+export const APPLICATION_NAME = process.env.APPLICATION_NAME;
 
 //* AUTHENTICATION
 export const DEFAULT_USER = {
