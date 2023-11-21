@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font: inherit;
+}
+
+html {
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+input {
+	display: block;
+	margin-top: 3px;
+	border: none;
+	outline: none;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+	width: 100%;
+	height: 29px;
+	padding: 0px;
+	text-align: center;
+}
+
+a {
+	border: none;
+	outline: none;
+	text-decoration: none;
+	font-family: inherit;
+	color: inherit;
+}
+
+h1 {
+	margin: 5vh 0;
+	text-align: center;
+	text-decoration: underline;
+	font-weight: bolder;
+	font-size: 200%;
+}
+
+/* Special class */
+.component_wrapper_smartPhone_first {
+	padding: 0px;
+	width: 180px;
+	height: 55px;
+	min-width: 150px;
+}

@@ -1,0 +1,5 @@
+.title {
+	/* position: absolute; */
+	font-size: 200%;
+	color: var(--text-color);
+}
