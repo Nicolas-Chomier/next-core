@@ -23,37 +23,22 @@ const handler = NextAuth({
 				},
 			},
 			async authorize(credentials, req: any) {
-				console.log('credential ok');
-				console.log('credentials =', credentials);
-				console.log(
-					'process.env.NEXT_PUBLIC_URI',
-					process.env.NEXT_PUBLIC_URI,
-				);
-				const dev = process.env.NODE_ENV !== 'production';
+				const dev = process.env.NODE_ENV === 'production';
+				let url;
 
 				if (dev) {
-					console.log('Nous sommes en mode développement');
+					const baseUrl = new URL(
+						req.headers['x-forwarded-proto'] +
+							'://' +
+							process.env.NEXT_PUBLIC_URI,
+					);
+					url = new URL('/api/login', baseUrl);
 				} else {
-					console.log('Nous sommes en mode production');
+					url = new URL('/api/login', process.env.NEXTAUTH_URL);
 				}
-				// Préparation de l'URL
 
-				/* const baseUrl = new URL(
-					req.headers['x-forwarded-proto'] +
-						'://' +
-						req.headers['x-forwarded-host'],
-				); */
-				const baseUrl = new URL(
-					req.headers['x-forwarded-proto'] +
-						'://' +
-						process.env.NEXT_PUBLIC_URI,
-				);
-				const url = new URL('/api/login', baseUrl);
-				console.log('URL=>', url);
-
-				// Add logic here to look up the user from the credentials supplied  # http://localhost:3000/api/login
 				try {
-					const res = await fetch('http://localhost:3000/api/login', {
+					const res = await fetch(url, {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json',
@@ -65,15 +50,9 @@ const handler = NextAuth({
 					});
 					const user = await res.json();
 					if (user) {
-						console.log('auth route user oK', user);
-						// Any object returned will be saved in `user` property of the JWT
 						return user;
 					} else {
-						console.log('Null');
-						// If you return null then an error will be displayed advising the user to check their details.
 						return null;
-
-						// You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
 					}
 				} catch (error) {
 					console.error('Error during fetch: ', error);
