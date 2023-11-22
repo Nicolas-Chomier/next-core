@@ -117,8 +117,9 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 					variant={NATIVE_COMPONENT_VARIANT}
 					radius={NATIVE_COMPONENT_RADIUS}
 					className={styles.button}
+					size={'3'}
 				>
-					Add user
+					ADD USER
 				</Button>
 			) : null}
 		</form>
