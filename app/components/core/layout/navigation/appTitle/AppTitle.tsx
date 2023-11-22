@@ -14,6 +14,7 @@ import styles from './AppTitle.module.css';
 
 export const AppTitle = () => {
 	const { isDarkMode } = setDarkMode();
+
 	return (
 		<Link href={LANDING_FOLDER_PATH}>
 			<Text
