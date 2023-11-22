@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 // External modules / Third-party libraries
 import Link from 'next/link';
-import { HomeIcon, LogOut, Menu, Moon, Settings, Sun } from 'lucide-react';
+import { HomeIcon, LogOut, Menu, Moon, Settings, Sun, X } from 'lucide-react';
 import { Tooltip } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
@@ -15,7 +15,12 @@ import {
 	APP_SETTINGS_PAGES,
 	DEFAULT_RANK,
 } from '@/config/settings';
-import { ICON_SIZE_L, ICON_STROKE_M, ICON_SIZE_XL } from '@/config/const';
+import {
+	STANDARD_COLOR_DANGER,
+	ICON_SIZE_L,
+	ICON_STROKE_M,
+	ICON_SIZE_XL,
+} from '@/config/const';
 // Styles
 import styles from './MultiButtonFrame.module.css';
 
@@ -33,7 +38,15 @@ export const MultiButtonFrame = () => {
 				} ${styles.toggle_switch}`}
 				onClick={() => setShowMenu(!showMenu)}
 			>
-				<Menu size={ICON_SIZE_L} strokeWidth={ICON_STROKE_M} />
+				{showMenu ? (
+					<X
+						size={ICON_SIZE_L}
+						strokeWidth={ICON_STROKE_M}
+						color={STANDARD_COLOR_DANGER}
+					/>
+				) : (
+					<Menu size={ICON_SIZE_L} strokeWidth={ICON_STROKE_M} />
+				)}
 			</button>
 			<div
 				className={`${
