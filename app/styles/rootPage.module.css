@@ -28,8 +28,26 @@
 	height: 230px;
 	width: 220px;
 	background-color: whitesmoke;
-	padding: 30px 13px 13px 13px;
+	padding: 13px;
 	border-radius: 28px;
+}
+
+.inputText_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 70%;
+}
+
+.button_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
 }
 
 .button {

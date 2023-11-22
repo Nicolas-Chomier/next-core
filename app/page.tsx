@@ -2,9 +2,7 @@
 // React core
 import { signIn } from 'next-auth/react';
 // External modules / Third-party libraries
-import { Box, Button, Flex } from '@radix-ui/themes';
 import { KeyRound } from 'lucide-react';
-import { StandardCard } from '@/app/components/core/layout/standardCard/StandardCard';
 import { z, ZodType } from 'zod';
 // Local components
 import { InputText } from '@/app/components/core/inputText/InputText';
@@ -12,10 +10,10 @@ import { InputText } from '@/app/components/core/inputText/InputText';
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 import { useForm } from 'react-hook-form';
 // Configuration
-import { STANDARD_COLOR_SUCCESS } from '@/config/const';
 import { DEFAULT_USER, LANDING_FOLDER_PATH } from '@/config/settings';
 // Styles
 import styles from '@/app/styles/rootPage.module.css';
+import { LoadingComponent } from './components/core/layout/loadingComponent/LoadingComponent';
 
 type TFormData = {
 	email: string;
@@ -61,27 +59,34 @@ const RootPage = () => {
 			</div>
 
 			<form onSubmit={handleSubmit(submitData)} className={styles.form}>
-				<InputText
-					type='email'
-					label='email'
-					placeholder='Votre Email'
-					disabled={false}
-					register={register}
-					setValue={setValue}
-					errors={errors}
-				/>
+				<div className={styles.inputText_wrapper}>
+					<InputText
+						type='email'
+						label='email'
+						placeholder='Votre Email'
+						disabled={false}
+						register={register}
+						setValue={setValue}
+						errors={errors}
+					/>
 
-				<InputText
-					type='password'
-					label='password'
-					placeholder='Votre Mot de passe'
-					disabled={false}
-					register={register}
-					setValue={setValue}
-					errors={errors}
-				/>
-
-				<button className={styles.button}>Valider</button>
+					<InputText
+						type='password'
+						label='password'
+						placeholder='Votre Mot de passe'
+						disabled={false}
+						register={register}
+						setValue={setValue}
+						errors={errors}
+					/>
+				</div>
+				<div className={styles.button_wrapper}>
+					{isSubmitting ? (
+						<LoadingComponent></LoadingComponent>
+					) : (
+						<button className={styles.button}>Valider</button>
+					)}
+				</div>
 			</form>
 		</main>
 	);
