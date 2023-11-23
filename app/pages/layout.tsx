@@ -3,7 +3,7 @@
 import React from 'react';
 // External modules / Third-party libraries
 // Local components
-import { NavBar } from '@/app/components/core/layout/navigation/navBar/NavBar';
+import { NavigationBar } from '@/app/components/core/navigation/navigationBar/NavigationBar';
 // Hooks and utilities
 import { setDarkMode } from '../store/core/darkMode';
 // Configuration
@@ -25,7 +25,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 				isDarkMode ? 'dark_background' : 'light_background'
 			}`}
 		>
-			<NavBar />
+			<NavigationBar />
 			<div>{children}</div>
 		</main>
 	);

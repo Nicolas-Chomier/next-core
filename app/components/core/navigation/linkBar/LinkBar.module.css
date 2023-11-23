@@ -23,7 +23,7 @@
 	height: 40px;
 	border-radius: 50px;
 	font-size: 110%;
-	transition: font-size 0.5s ease, color 0.5s ease;
+	transition: color 0.5s ease;
 }
 
 .items:hover {
@@ -33,7 +33,7 @@
 .actual_page {
 	background-color: var(--negativ-color);
 	color: var(--theme-text-color);
-	transition: background-color 0.5s ease;
+	transition: color 0.5s ease, background-color 0.5s ease;
 }
 
 .actual_page:hover {

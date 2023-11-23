@@ -2,10 +2,10 @@
 import React from 'react';
 // External modules / Third-party libraries
 // Local components
-import { UserInfos } from '@/app/components/core/layout/navigation/userInfos/UserInfos';
-import { MultiButtonFrame } from '@/app/components/core/layout/navigation/multiButtonFrame/MultiButtonFrame ';
-import { LinkBar } from '@/app/components/core/layout/navigation/linkBar/LinkBar';
-import { AppTitle } from '@/app/components/core/layout/navigation/appTitle/AppTitle';
+import { UserInfos } from '@/app/components/core/navigation/userInfos/UserInfos';
+import { MultiButtonFrame } from '@/app/components/core/navigation/multiButtonFrame/MultiButtonFrame ';
+import { LinkBar } from '@/app/components/core/navigation/linkBar/LinkBar';
+import { Title } from '@/app/components/core/navigation/title/Title';
 // Hooks and utilities
 import useMediaQuery from '@/app/hooks/core/useMediaQuery';
 // Configuration
@@ -14,9 +14,9 @@ import {
 	MEDIAQUERY_BREAKPOINT_TABLET_PORTRAIT,
 } from '@/config/const';
 // Styles
-import styles from './NavBar.module.css';
+import styles from './NavigationBar.module.css';
 
-export const NavBar = () => {
+export const NavigationBar = () => {
 	const isSmartphoneSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_SMARTPHONE);
 	const isTabletSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_TABLET_PORTRAIT);
 
@@ -26,7 +26,7 @@ export const NavBar = () => {
 				{isTabletSize || isSmartphoneSize ? (
 					<MultiButtonFrame />
 				) : (
-					<AppTitle />
+					<Title />
 				)}
 			</div>
 			<div className={styles.wrapper_2}>

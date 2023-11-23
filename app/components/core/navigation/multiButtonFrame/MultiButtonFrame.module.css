@@ -35,7 +35,6 @@
 	visibility: hidden;
 	opacity: 0;
 	transform: translateX(10px);
-	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .showButton div {
@@ -46,20 +45,20 @@
 
 .showButton .button1 {
 	right: 90px;
-	transition-delay: 0.1s;
+	transition-delay: 0.05s;
 }
 .showButton .button2 {
 	right: 130px;
-	transition-delay: 0.2s;
+	transition-delay: 0.1s;
 	margin-top: 10px;
 }
 .showButton .button3 {
 	right: 170px;
-	transition-delay: 0.3s;
+	transition-delay: 0.15s;
 	margin-top: 10px;
 }
 .showButton .button4 {
 	right: 210px;
-	transition-delay: 0.4s;
+	transition-delay: 0.2s;
 	margin-top: 10px;
 }

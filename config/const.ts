@@ -12,7 +12,7 @@ export const MEDIAQUERY_BREAKPOINT_LARGE_SCREEN = '(min-width: 1367px)';
 export const THEME_ACCENTCOLOR = 'iris';
 export const THEME_GRAYCOLOR = 'sand';
 export const THEME_PANELBACKGROUND = 'translucent';
-export const THEME_SCALING = '90%';
+export const THEME_SCALING = '95%';
 export const THEME_RADIUS = 'full';
 export const THEME_VARIANT = 'ghost';
 

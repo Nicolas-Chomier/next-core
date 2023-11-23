@@ -4,7 +4,7 @@ import React from 'react';
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
 import { InputText } from '@/app/components/core/inputText/InputText';
-import { StandardCard } from '@/app/components/core/layout/standardCard/StandardCard';
+import { StandardCard } from '@/app/components/core/layout/customCard/CustomCard';
 // Hooks and utilities
 import { useForm } from 'react-hook-form';
 import { Box, Button, Flex } from '@radix-ui/themes';

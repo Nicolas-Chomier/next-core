@@ -9,11 +9,11 @@ import { NATIVE_COMPONENT_PX_RADIUS } from '@/config/const';
 // Styles
 // import styles from './StandardCard.module.css';
 
-type StandardCardProps = {
+type CustomCardProps = {
 	children: React.ReactNode;
 };
 
-export const StandardCard = (props: StandardCardProps) => {
+export const CustomCard = (props: CustomCardProps) => {
 	return (
 		<Card style={{ borderRadius: NATIVE_COMPONENT_PX_RADIUS }}>
 			{props.children}

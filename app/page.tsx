@@ -13,7 +13,7 @@ import { useForm } from 'react-hook-form';
 import { DEFAULT_USER, LANDING_FOLDER_PATH } from '@/config/settings';
 // Styles
 import styles from '@/app/styles/rootPage.module.css';
-import { LoadingComponent } from './components/core/layout/loadingComponent/LoadingComponent';
+import { LoadingSpinner } from './components/core/layout/loadingSpinner/LoadingSpinner';
 
 type TFormData = {
 	email: string;
@@ -82,7 +82,7 @@ const RootPage = () => {
 				</div>
 				<div className={styles.button_wrapper}>
 					{isSubmitting ? (
-						<LoadingComponent></LoadingComponent>
+						<LoadingSpinner />
 					) : (
 						<button className={styles.button}>Valider</button>
 					)}

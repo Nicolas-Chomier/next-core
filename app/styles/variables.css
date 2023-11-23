@@ -1,11 +1,11 @@
 :root {
 	/* Theme colors */
-	--background-color: rgba(255, 255, 255, 0.658);
-	--background-color-mat: rgb(236, 234, 234);
+	--background-color: rgba(255, 255, 255, 0.85);
+	--background-color-mat: rgb(255, 255, 255);
 	--accent-text-color: #5753c6;
 	--theme-text-color: rgba(255, 255, 255, 0.95);
 	--text-color: rgba(0, 0, 0, 0.9);
-	--border-color: #d2d2cf;
+	--border-color: #d3d2d2;
 	--accent-color: #7b61ff; /* iris from RADIX UI => #5753c6;*/
 	--negativ-color: rgba(0, 0, 0, 0.8);
 	/* Size */

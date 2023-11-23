@@ -2,7 +2,6 @@
 // React core
 import React, { useState } from 'react';
 // External modules / Third-party libraries
-import { Flex, Heading } from '@radix-ui/themes';
 // Local components
 import { ChangePasswordForm } from '@/app/components/core/changePasswordForm/ChangePasswordForm';
 // Hooks and utilities

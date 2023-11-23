@@ -10,7 +10,7 @@ import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters'
 // Configuration
 // Styles
 import styles from './UserInfos.module.css';
-import { LoadingComponent } from '../../loadingComponent/LoadingComponent';
+import { LoadingSpinner } from '../../layout/loadingSpinner/LoadingSpinner';
 
 type TUserInfosProps = {};
 
@@ -21,12 +21,12 @@ export const UserInfos = ({}: TUserInfosProps) => {
 	const { isDarkMode } = setDarkMode();
 
 	if (!session) {
-		return <LoadingComponent />;
+		return <LoadingSpinner />;
 	}
 
 	return (
 		<div
-			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container}`}
+			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container} `}
 		>
 			<Avatar
 				src='/images/moi.jpg?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop'

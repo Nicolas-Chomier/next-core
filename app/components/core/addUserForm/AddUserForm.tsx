@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
 import { InputSelect } from '@/app/components/core/inputSelect/InputSelect';
 import { InputText } from '@/app/components/core/inputText/InputText';
-import { StandardCard } from '@/app/components/core/layout/standardCard/StandardCard';
+import { CustomCard } from '@/app/components/core/layout/customCard/CustomCard';
 // Hooks and utilities
 import { useForm } from 'react-hook-form';
 import useMediaQuery from '@/app/hooks/core/useMediaQuery';
@@ -66,7 +66,7 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 				align={'center'}
 				justify={'center'}
 			>
-				<StandardCard>
+				<CustomCard>
 					<InputText
 						type='email'
 						label='email'
@@ -76,9 +76,9 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 						setValue={setValue}
 						errors={errors}
 					/>
-				</StandardCard>
+				</CustomCard>
 
-				<StandardCard>
+				<CustomCard>
 					<InputText
 						type='text'
 						label='name'
@@ -88,9 +88,9 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 						setValue={setValue}
 						errors={errors}
 					/>
-				</StandardCard>
+				</CustomCard>
 
-				<StandardCard>
+				<CustomCard>
 					<InputText
 						type='password'
 						label='password'
@@ -100,16 +100,16 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 						setValue={setValue}
 						errors={errors}
 					/>
-				</StandardCard>
+				</CustomCard>
 
-				<StandardCard>
+				<CustomCard>
 					<InputSelect
 						label={'rank'}
 						itemList={rankingList}
 						control={control}
 						defaultValue={selectDefaultValue}
 					/>
-				</StandardCard>
+				</CustomCard>
 			</Grid>
 			{isValid ? (
 				<Button

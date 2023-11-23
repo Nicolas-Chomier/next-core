@@ -6,14 +6,14 @@ import { Box } from '@radix-ui/themes';
 import { setDarkMode } from '@/app/store/core/darkMode';
 // Configuration
 // Styles
-import styles from './LoadingComponent.module.css';
+import styles from './LoadingSpinner.module.css';
 
-export const LoadingComponent = () => {
+export const LoadingSpinner = () => {
 	const { isDarkMode } = setDarkMode();
 
 	return (
 		<Box
-			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.loader}`}
+			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.spinner}`}
 		></Box>
 	);
 };

@@ -7,7 +7,7 @@ import { Text, Card, Flex } from '@radix-ui/themes';
 // Configuration
 import { STANDARD_COLOR_DANGER } from '@/config/const';
 
-export const ErrorComponent = ({ message }: any) => {
+export const ErrorBox = ({ message }: any) => {
 	return (
 		<Card>
 			<Flex align={'center'} justify={'center'}>

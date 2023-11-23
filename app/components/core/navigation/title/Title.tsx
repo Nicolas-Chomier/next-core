@@ -10,9 +10,9 @@ import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters'
 // Configuration
 import { APPLICATION_NAME, LANDING_FOLDER_PATH } from '@/config/settings';
 // Styles
-import styles from './AppTitle.module.css';
+import styles from './Title.module.css';
 
-export const AppTitle = () => {
+export const Title = () => {
 	const { isDarkMode } = setDarkMode();
 
 	return (

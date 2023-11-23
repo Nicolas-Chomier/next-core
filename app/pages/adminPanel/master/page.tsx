@@ -2,12 +2,11 @@
 // React core
 import React, { useState, ReactNode } from 'react';
 // External modules / Third-party libraries
-import { Badge, Callout, Flex, Heading } from '@radix-ui/themes';
 import { Info } from 'lucide-react';
 // Local components
 import { AdminTable } from '@/app/components/core/adminTable/AdminTable';
-import { LoadingComponent } from '@/app/components/core/layout/loadingComponent/LoadingComponent';
-import { ErrorComponent } from '@/app/components/core/layout/errorComponent/ErrorComponent';
+import { LoadingSpinner } from '@/app/components/core/layout/loadingSpinner/LoadingSpinner';
+import { ErrorBox } from '@/app/components/core/layout/errorBox/ErrorBox';
 import { AddUserForm } from '@/app/components/core/addUserForm/AddUserForm';
 // Hooks and utilities
 import { useSession } from 'next-auth/react';
@@ -17,7 +16,7 @@ import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters'
 import { API_ROUTES } from '@/config/apiRoutes';
 import { DEFAULT_RANK } from '@/config/settings';
 // Styles
-import styles from './AdminPanel.module.css';
+import styles from '@/app/pages/adminPanel/AdminPanel.module.css';
 
 type TNewUserTemplate = {
 	email: string;
@@ -108,12 +107,12 @@ const DisplayUserTable = (handleDelete: (id: number) => void): ReactNode => {
 
 	// JSX
 	if (isLoading) {
-		return <LoadingComponent />;
+		return <LoadingSpinner />;
 	}
 
 	if (isError && error instanceof Error) {
 		const message = error?.message || 'Unknown error !';
-		return <ErrorComponent message={message} />;
+		return <ErrorBox message={message} />;
 	}
 
 	return <AdminTable content={data} handleDelete={handleDelete} />;
