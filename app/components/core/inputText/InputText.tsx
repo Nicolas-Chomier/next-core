@@ -7,7 +7,7 @@ import { Flex, Text } from '@radix-ui/themes';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 import { handleKeyDown } from '@/app/utils/core/handleKeyDown';
 // Configuration
-import { STANDARD_COLOR_DANGER } from '@/config/const';
+import { STANDARD_COLOR_DANGER } from '@/config/constantes';
 // Styles
 import styles from './InputText.module.css';
 

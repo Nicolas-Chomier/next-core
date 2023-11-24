@@ -12,6 +12,9 @@ if (DEV) {
 	API_BASE_URL = process.env.NEXT_PUBLIC_URI;
 }
 
+//* APPLICATION MAIN URL
+export const URL = API_BASE_URL;
+
 //* ADMIN PANEL END POINTS
 export const API_ROUTES = {
 	GET_ALL_USER: `${API_BASE_URL}/api/admin/getAllUser`,

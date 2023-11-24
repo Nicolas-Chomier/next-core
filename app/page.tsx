@@ -10,7 +10,7 @@ import { InputText } from '@/app/components/core/inputText/InputText';
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 import { useForm } from 'react-hook-form';
 // Configuration
-import { DEFAULT_USER, LANDING_FOLDER_PATH } from '@/config/settings';
+import { DEFAULT_USER, LANDING_FOLDER_PATH } from '@/config/core/app_settings';
 // Styles
 import styles from '@/app/styles/rootPage.module.css';
 import { LoadingSpinner } from './components/core/layout/loadingSpinner/LoadingSpinner';

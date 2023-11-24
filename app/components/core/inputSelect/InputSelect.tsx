@@ -1,5 +1,5 @@
 // React core
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 // External modules / Third-party libraries
 import { Flex, Select, Text } from '@radix-ui/themes';
 // Local components

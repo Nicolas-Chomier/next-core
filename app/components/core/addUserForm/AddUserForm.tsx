@@ -16,8 +16,8 @@ import {
 	NATIVE_COMPONENT_VARIANT,
 	NATIVE_COMPONENT_RADIUS,
 	MEDIAQUERY_BREAKPOINT_SMARTPHONE,
-} from '@/config/const';
-import { USERS_CONFIG } from '@/config/settings';
+} from '@/config/constantes';
+import { USERS_CONFIG } from '@/config/core/app_settings';
 import { AddUserSchema } from '@/app/utils/schema/addUserForm';
 // Styles
 import styles from './AddUserForm.module.css';

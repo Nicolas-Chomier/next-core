@@ -5,7 +5,7 @@ import { Card } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
 // Configuration
-import { NATIVE_COMPONENT_PX_RADIUS } from '@/config/const';
+import { NATIVE_COMPONENT_PX_RADIUS } from '@/config/constantes';
 // Styles
 // import styles from './StandardCard.module.css';
 

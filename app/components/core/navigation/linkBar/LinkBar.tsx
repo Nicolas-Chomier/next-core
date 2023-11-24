@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import { LANDING_FOLDER_PATH, PAGES_NAMES } from '@/config/settings';
+import { LANDING_FOLDER_PATH, PAGES_NAMES } from '@/config/core/app_settings';
 // Styles
 import styles from './LinkBar.module.css';
 

@@ -13,8 +13,8 @@ import { useSession } from 'next-auth/react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import { API_ROUTES } from '@/config/apiRoutes';
-import { DEFAULT_RANK } from '@/config/settings';
+import { API_ROUTES } from '@/config/core/app_routes';
+import { DEFAULT_RANK } from '@/config/core/app_settings';
 // Styles
 import styles from '@/app/pages/adminPanel/AdminPanel.module.css';
 

@@ -8,8 +8,8 @@ import { ChangePasswordForm } from '@/app/components/core/changePasswordForm/Cha
 import { useSession } from 'next-auth/react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 // Configuration
-import { API_ROUTES } from '@/config/apiRoutes';
-import { DEFAULT_ID_NUMBER } from '@/config/settings';
+import { API_ROUTES } from '@/config/core/app_routes';
+import { DEFAULT_ID_NUMBER } from '@/config/core/app_settings';
 // Styles
 import styles from './AdminPanel.module.css';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';

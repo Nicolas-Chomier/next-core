@@ -12,7 +12,7 @@ import useMediaQuery from '@/app/hooks/core/useMediaQuery';
 import {
 	MEDIAQUERY_BREAKPOINT_SMARTPHONE,
 	MEDIAQUERY_BREAKPOINT_TABLET_PORTRAIT,
-} from '@/config/const';
+} from '@/config/constantes';
 // Styles
 import styles from './NavigationBar.module.css';
 

@@ -5,7 +5,7 @@ import { Text, Card, Flex } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
 // Configuration
-import { STANDARD_COLOR_DANGER } from '@/config/const';
+import { STANDARD_COLOR_DANGER } from '@/config/constantes';
 
 export const ErrorBox = ({ message }: any) => {
 	return (

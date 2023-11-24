@@ -4,7 +4,7 @@ import React from 'react';
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
 import { InputText } from '@/app/components/core/inputText/InputText';
-import { StandardCard } from '@/app/components/core/layout/customCard/CustomCard';
+import { CustomCard } from '@/app/components/core/layout/customCard/CustomCard';
 // Hooks and utilities
 import { useForm } from 'react-hook-form';
 import { Box, Button, Flex } from '@radix-ui/themes';
@@ -14,7 +14,7 @@ import {
 	STANDARD_COLOR_SUCCESS,
 	NATIVE_COMPONENT_VARIANT,
 	NATIVE_COMPONENT_RADIUS,
-} from '@/config/const';
+} from '@/config/constantes';
 
 type TChangePasswordFormProps = {
 	handlePatch: (obj: TChangePassword) => void;
@@ -54,7 +54,7 @@ export const ChangePasswordForm = ({
 				justify={'center'}
 			>
 				<Flex gap='4' align={'center'} justify={'start'}>
-					<StandardCard>
+					<CustomCard>
 						<InputText
 							type='password'
 							label='password'
@@ -63,9 +63,9 @@ export const ChangePasswordForm = ({
 							register={register}
 							errors={errors}
 						/>
-					</StandardCard>
+					</CustomCard>
 
-					<StandardCard>
+					<CustomCard>
 						<InputText
 							type='password'
 							label='confirm_password'
@@ -74,7 +74,7 @@ export const ChangePasswordForm = ({
 							register={register}
 							errors={errors}
 						/>
-					</StandardCard>
+					</CustomCard>
 				</Flex>
 
 				<Box /* className={styles.form_box} */>

@@ -12,7 +12,7 @@ import {
 	THEME_GRAYCOLOR,
 	THEME_PANELBACKGROUND,
 	THEME_SCALING,
-} from '@/config/const';
+} from '@/config/constantes';
 // Styles
 import '@radix-ui/themes/styles.css';
 import './styles/globals.css';

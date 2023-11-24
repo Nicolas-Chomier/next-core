@@ -14,13 +14,13 @@ import {
 	LANDING_FOLDER_PATH,
 	APP_SETTINGS_PAGES,
 	DEFAULT_RANK,
-} from '@/config/settings';
+} from '@/config/core/app_settings';
 import {
 	STANDARD_COLOR_DANGER,
 	ICON_SIZE_L,
 	ICON_STROKE_M,
 	ICON_SIZE_XL,
-} from '@/config/const';
+} from '@/config/constantes';
 // Styles
 import styles from './MultiButtonFrame.module.css';
 

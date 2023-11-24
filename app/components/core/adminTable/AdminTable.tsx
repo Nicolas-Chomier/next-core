@@ -5,7 +5,7 @@ import { Trash2, X } from 'lucide-react';
 // Local components
 // Hooks and utilities
 // Configuration
-import { USERS_CONFIG } from '@/config/settings';
+import { USERS_CONFIG } from '@/config/core/app_settings';
 import {
 	NATIVE_COMPONENT_PX_RADIUS,
 	ICON_SIZE_M,
@@ -13,7 +13,7 @@ import {
 	STANDARD_COLOR_DANGER,
 	NATIVE_COMPONENT_RADIUS,
 	NATIVE_COMPONENT_VARIANT,
-} from '@/config/const';
+} from '@/config/constantes';
 // Styles
 import styles from '@/app/components/core/adminTable/AdminTable.module.css';
 

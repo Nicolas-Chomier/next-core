@@ -1,5 +1,5 @@
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { DEFAULT_SIGN_OPTION } from '@/config/settings';
+import { DEFAULT_SIGN_OPTION } from '@/config/core/app_settings';
 
 export function signJwtAccessToken(
 	payload: JwtPayload,

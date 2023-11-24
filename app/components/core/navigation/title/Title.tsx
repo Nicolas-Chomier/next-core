@@ -8,7 +8,10 @@ import { Text } from '@radix-ui/themes';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import { APPLICATION_NAME, LANDING_FOLDER_PATH } from '@/config/settings';
+import {
+	APPLICATION_NAME,
+	LANDING_FOLDER_PATH,
+} from '@/config/core/app_settings';
 // Styles
 import styles from './Title.module.css';
 
