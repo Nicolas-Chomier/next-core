@@ -1,18 +1,17 @@
-.cardContainer {
-	position: relative;
-	z-index: 0;
-	box-shadow: inset 0 0 0 1px var(--gray-a7);
-	background-color: var(--background-color);
-	height: fit-content;
-	padding: 8px;
-	border-radius: var(--radius-5);
+.container {
 }
 
-.largeList_trigger_wrapper {
+.title {
+}
+.delete_button {
+}
+.panel_button {
+}
+.content_wrapper {
 	position: relative;
 	top: 0;
 	left: 0;
-	padding: 0px;
+	padding: 5px;
 	width: 100%;
 	height: var(--select-trigger-height);
 	border-radius: 4px;
@@ -27,13 +26,51 @@
 	margin: auto;
 }
 
-.largeList_trigger {
-	padding: 3px;
+.trigger {
+	display: flex;
+	flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante */
+	align-items: center;
+
+	padding: 5px;
 	width: 100%;
 	margin-left: 8px;
 	font-size: 100%;
+
+	max-height: 29px; /* Hauteur maximale de la div */
+	overflow-y: auto;
 }
 
+.largeList_trigger::-webkit-scrollbar {
+	display: none;
+}
+
+.badge {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--accent-color);
+	border-radius: 4px;
+	width: auto;
+	margin: 0px 4px 2px 0px;
+	color: white;
+	padding: 0px 4px;
+}
+.MultiSelect_Badge:hover {
+	background-color: tomato;
+	cursor: pointer;
+}
+
+.MultiSelect_Badge_Text {
+	font-size: 85%;
+}
+.MultiSelect_Badge_Delete_Button {
+	font-size: 90%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: min-content;
+}
 .largeList_icon {
 	display: flex;
 	align-items: center;
