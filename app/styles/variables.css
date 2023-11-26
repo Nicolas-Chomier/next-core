@@ -13,7 +13,7 @@
 }
 
 .dark-theme {
-	--background-color: rgba(0, 0, 0, 0.45);
+	--background-color: rgba(22, 22, 22, 0.75);
 	--background-color-mat: rgb(43, 43, 43);
 	--accent-text-color: #b1a9ff;
 	--text-color: rgba(255, 255, 255, 0.9);
