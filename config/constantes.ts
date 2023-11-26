@@ -32,6 +32,7 @@ export const STANDARD_COLOR_DANGER = 'tomato';
 export const LANGUAGE = 'fr';
 
 //* ICON
+export const ICON_SIZE_S = '15';
 export const ICON_SIZE_M = '22';
 export const ICON_SIZE_L = '26';
 export const ICON_SIZE_XL = '20';
