@@ -17,7 +17,7 @@ import {
 } from '@/config/core/app_settings';
 import {
 	STANDARD_COLOR_DANGER,
-	ICON_SIZE_L,
+	ICON_SIZE_M,
 	ICON_STROKE_M,
 	ICON_SIZE_XL,
 } from '@/config/constantes';
@@ -40,12 +40,12 @@ export const MultiButtonFrame = () => {
 			>
 				{showMenu ? (
 					<X
-						size={ICON_SIZE_L}
+						size={ICON_SIZE_M}
 						strokeWidth={ICON_STROKE_M}
 						color={STANDARD_COLOR_DANGER}
 					/>
 				) : (
-					<Menu size={ICON_SIZE_L} strokeWidth={ICON_STROKE_M} />
+					<Menu size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 				)}
 			</button>
 			<div
@@ -85,9 +85,9 @@ const DarkModeSwitch = () => {
 				} ${styles.sub_switch}`}
 			>
 				{isDarkMode ? (
-					<Sun size={ICON_SIZE_XL} strokeWidth={ICON_STROKE_M} />
+					<Sun size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 				) : (
-					<Moon size={ICON_SIZE_XL} strokeWidth={ICON_STROKE_M} />
+					<Moon size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 				)}
 			</button>
 		</Tooltip>
@@ -104,7 +104,7 @@ const LogOutSwitch = () => {
 				} ${styles.sub_switch}`}
 				onClick={() => signOut({ callbackUrl: '/' })}
 			>
-				<LogOut size={ICON_SIZE_XL} strokeWidth={ICON_STROKE_M} />
+				<LogOut size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 			</button>
 		</Tooltip>
 	);
@@ -120,7 +120,7 @@ const HomeSwitch = () => {
 						styles.switch_base
 					} ${styles.sub_switch}`}
 				>
-					<HomeIcon size={ICON_SIZE_XL} strokeWidth={ICON_STROKE_M} />
+					<HomeIcon size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 				</button>
 			</Link>
 		</Tooltip>
@@ -144,7 +144,7 @@ const SettingsSwitch = ({ rank }: TSettingsSwitchProps) => {
 						styles.switch_base
 					} ${styles.sub_switch}`}
 				>
-					<Settings size={ICON_SIZE_XL} strokeWidth={ICON_STROKE_M} />
+					<Settings size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 				</button>
 			</Link>
 		</Tooltip>

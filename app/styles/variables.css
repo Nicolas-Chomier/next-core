@@ -8,8 +8,13 @@
 	--border-color: #d3d2d2;
 	--accent-color: #7b61ff; /* iris from RADIX UI => #5753c6;*/
 	--negativ-color: rgba(0, 0, 0, 0.8);
+	/* Other colors*/
+	--success-color: #3e9b4f;
+	--warning-color: #ffba18;
+	--danger-color: #e54d2e;
 	/* Theme component size */
 	--navBar-height: 70px;
+	--largeListMultiSelect-height: 60px;
 }
 
 .dark-theme {

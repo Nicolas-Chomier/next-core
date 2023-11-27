@@ -1,16 +1,17 @@
 'use client';
 // React core
-
 import React, { useState, useEffect } from 'react';
 // External modules / Third-party libraries
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
-import { LargeListMultiSelect } from '@/app/components/largeListMultiSelect/LargeListMultiSelect';
+import { LargeListSelect_multi } from '@/app/components/largeListSelect/LargeListSelect_multi';
 // Hooks and utilities
 import { Controller, useForm } from 'react-hook-form';
 // Configuration
 import { ZodType, z } from 'zod';
 import { nanoid } from 'nanoid';
+import { LargeListSelect_simple } from '@/app/components/largeListSelect/LargeListSelect_simple';
+import { Flex } from '@radix-ui/themes';
 
 // Générer 10 strings aléatoires
 let stringList: any = [];
@@ -19,11 +20,12 @@ for (let i = 0; i < 15; i++) {
 }
 
 type TAddUserForm = {
+	test0: any;
 	test: any;
 };
 
 export const TestSchema: ZodType<TAddUserForm> = z.object({
-	//test: z.string().toLowerCase().trim().min(1),
+	test0: z.string().toLowerCase().trim().min(1),
 	test: z.array(z.string()),
 });
 
@@ -43,17 +45,11 @@ const Informations = () => {
 		mode: 'onChange',
 		resolver: zodResolver(TestSchema),
 	});
-	console.log(errors);
 	// Send Data to page component above and reset form
 	const submitData = async (data: TAddUserForm) => {
 		//handlePost(data);
 		console.log(data);
-
 		reset();
-	};
-
-	const resetField = () => {
-		setValue('test', []); // Réinitialise le champ avec un tableau vide
 	};
 
 	return (
@@ -61,18 +57,34 @@ const Informations = () => {
 			<h1>Infos</h1>
 
 			<form onSubmit={handleSubmit(submitData)}>
-				<Controller
-					control={control}
-					name='test'
-					render={({ field }) => (
-						<LargeListMultiSelect
-							field={field}
-							contentToDisplay={stringList}
-						/>
-					)}
-				/>
-
-				<button type='submit'>Soumettre</button>
+				<Flex
+					direction={'column'}
+					align={'center'}
+					justify={'between'}
+					gap={'9'}
+				>
+					<Controller
+						control={control}
+						name='test0'
+						render={({ field }) => (
+							<LargeListSelect_simple
+								field={field}
+								contentToDisplay={stringList}
+							/>
+						)}
+					/>
+					<Controller
+						control={control}
+						name='test'
+						render={({ field }) => (
+							<LargeListSelect_multi
+								field={field}
+								contentToDisplay={stringList}
+							/>
+						)}
+					/>
+					<button>Soumettre</button>
+				</Flex>
 			</form>
 		</>
 	);
