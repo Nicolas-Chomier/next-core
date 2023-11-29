@@ -35,6 +35,7 @@ export const LargeListSelect_simple = ({
 	// Functions for selecting items in the list
 	const handleSelect = (item: string) => {
 		field.onChange(item);
+		setDeploy(false);
 	};
 
 	// JSX

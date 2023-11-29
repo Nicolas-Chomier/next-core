@@ -44,10 +44,14 @@ export const LargeListSelect_multi = ({
 	};
 	const handleReset = () => {
 		field.onChange([]), (listRef.current = []);
+		setDeploy(false);
 	};
 	const handleSelect = (item: string) => {
 		listRef.current.push(item);
 		field.onChange([...listRef.current]);
+	};
+	const handleExpand = () => {
+		setDeploy(!deploy);
 	};
 
 	// Effect to reset the list reference when modifying the field
@@ -64,13 +68,20 @@ export const LargeListSelect_multi = ({
 				{capitalizeFirstLetters(field.name)}
 			</div>
 
-			<div className={styles.trigger} onClick={() => setDeploy(true)}>
+			<div
+				className={styles.trigger} /* onClick={() => setDeploy(true)} */
+			>
 				{!field.value || field.value.length === 0 ? (
-					<span className={styles.placeHolder}>{placeHolder}</span>
+					<span
+						className={styles.placeHolder}
+						onClick={() => setDeploy(!deploy)}
+					>
+						{placeHolder}
+					</span>
 				) : null}
 				<BadgeDisplayer field={field} handleClick={handleDelete} />
 				<ResetButton field={field} handleClick={handleReset} />
-				<ExpandPanelSwitch toggle={deploy} />
+				<ExpandPanelSwitch toggle={deploy} handleClick={handleExpand} />
 			</div>
 
 			{deploy ? (
@@ -143,10 +154,14 @@ const ResetButton = ({ field, handleClick }: TResetButtonProps) => {
 // ExpandPanelSwitch sub-component to manage drop-down panel display
 type TExpandPanelSwitchProps = {
 	toggle: boolean;
+	handleClick: () => void;
 };
-const ExpandPanelSwitch = ({ toggle }: TExpandPanelSwitchProps) => {
+const ExpandPanelSwitch = ({
+	toggle,
+	handleClick,
+}: TExpandPanelSwitchProps) => {
 	return (
-		<div className={styles.toggle_switch}>
+		<div className={styles.toggle_switch} onClick={() => handleClick()}>
 			{toggle ? (
 				<ChevronUp size={ICON_SIZE_M} strokeWidth={ICON_STROKE_S} />
 			) : (
