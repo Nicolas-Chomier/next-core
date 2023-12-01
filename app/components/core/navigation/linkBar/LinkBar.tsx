@@ -36,9 +36,7 @@ export const LinkBar = () => {
 							} ${styles.items}`}
 						>
 							<p className={styles.text}>
-								{capitalizeFirstLetters(
-									page.givenName.replace('_', ' '),
-								)}
+								{capitalizeFirstLetters(page.givenName)}
 							</p>
 						</div>
 					</Link>

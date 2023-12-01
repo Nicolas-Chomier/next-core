@@ -33,7 +33,7 @@ export const LANGUAGE = 'fr';
 
 //* ICON
 export const ICON_SIZE_S = '18';
-export const ICON_SIZE_M = '22';
+export const ICON_SIZE_M = '20';
 export const ICON_SIZE_L = '26';
 export const ICON_SIZE_XL = '32';
 export const ICON_STROKE_S = '1.2';

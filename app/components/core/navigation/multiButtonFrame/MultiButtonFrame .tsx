@@ -3,7 +3,15 @@
 import React, { useState } from 'react';
 // External modules / Third-party libraries
 import Link from 'next/link';
-import { HomeIcon, LogOut, Menu, Moon, Settings, Sun, X } from 'lucide-react';
+import {
+	HomeIcon,
+	LogOut,
+	Moon,
+	Settings,
+	Settings2,
+	Sun,
+	X,
+} from 'lucide-react';
 import { Tooltip } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
@@ -45,7 +53,7 @@ export const MultiButtonFrame = () => {
 						color={STANDARD_COLOR_DANGER}
 					/>
 				) : (
-					<Menu size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
+					<Settings2 size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 				)}
 			</button>
 			<div

@@ -5,6 +5,7 @@ import React from 'react';
 import { UserInfos } from '@/app/components/core/navigation/userInfos/UserInfos';
 import { MultiButtonFrame } from '@/app/components/core/navigation/multiButtonFrame/MultiButtonFrame ';
 import { LinkBar } from '@/app/components/core/navigation/linkBar/LinkBar';
+import { LinkButton } from '@/app/components/core/navigation/linkButton/LinkButton';
 import { Title } from '@/app/components/core/navigation/title/Title';
 // Hooks and utilities
 import useMediaQuery from '@/app/hooks/core/useMediaQuery';
@@ -30,9 +31,13 @@ export const NavigationBar = () => {
 				)}
 			</div>
 			<div className={styles.wrapper_2}>
-				<LinkBar />
+				{isSmartphoneSize ? null : <LinkBar />}
 			</div>
-			{isSmartphoneSize ? null : (
+			{isSmartphoneSize ? (
+				<div className={styles.wrapper_3}>
+					<LinkButton />
+				</div>
+			) : (
 				<div className={styles.wrapper_3}>
 					<UserInfos />
 					{isTabletSize ? null : <MultiButtonFrame />}
