@@ -1,4 +1,3 @@
-'use client';
 // React core
 import React, { useRef, useState } from 'react';
 // External modules / Third-party libraries
@@ -10,21 +9,21 @@ import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import { ICON_SIZE_M, ICON_STROKE_S } from '@/config/constantes';
+import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './LargeListSelect.module.css';
 
-type TLargeListSelectProps = {
-	field: any;
+type TSelectLargeListProps = {
+	field: { name: string; value: string; onChange: (value: string) => void };
 	contentToDisplay: string[];
 	placeHolder?: string;
 };
 
-export const LargeListSelect_simple = ({
+export const SelectLargeList = ({
 	field,
 	contentToDisplay = ['...'],
-	placeHolder = 'Select...',
-}: TLargeListSelectProps) => {
+	placeHolder,
+}: TSelectLargeListProps) => {
 	// State and references for display and interaction management
 	const [deploy, setDeploy] = useState(false);
 	const containerRef = useRef(null);
@@ -41,13 +40,13 @@ export const LargeListSelect_simple = ({
 	// JSX
 	return (
 		<div className={styles.container} ref={containerRef}>
-			<div className={styles.title}>
-				{capitalizeFirstLetters(field.name)}
-			</div>
 			<div className={styles.trigger} onClick={() => setDeploy(!deploy)}>
 				<div className={styles.placeHolder}>
-					{field.value || placeHolder}
+					{field.value ||
+						placeHolder ||
+						capitalizeFirstLetters(field.name)}
 				</div>
+
 				<ExpandPanelSwitch toggle={deploy} />
 			</div>
 
@@ -71,9 +70,9 @@ const ExpandPanelSwitch = ({ toggle }: TExpandPanelSwitchProps) => {
 	return (
 		<div className={styles.toggle_switch}>
 			{toggle ? (
-				<ChevronUp size={ICON_SIZE_M} strokeWidth={ICON_STROKE_S} />
+				<ChevronUp size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 			) : (
-				<ChevronDown size={ICON_SIZE_M} strokeWidth={ICON_STROKE_S} />
+				<ChevronDown size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 			)}
 		</div>
 	);

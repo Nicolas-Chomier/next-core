@@ -17,7 +17,7 @@ import { API_ROUTES } from '@/config/core/app_routes';
 import { DEFAULT_RANK } from '@/config/core/app_settings';
 // Styles
 import styles from '@/app/pages/adminPanel/AdminPanel.module.css';
-import LargeList from '@/app/components/largeListSelect/LargeListSelect_simple';
+import LargeList from '@/app/components/shared/select/largeList/SelectLargeList';
 
 type TNewUserTemplate = {
 	email: string;

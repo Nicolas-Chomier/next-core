@@ -27,10 +27,9 @@ import {
 	STANDARD_COLOR_DANGER,
 	ICON_SIZE_M,
 	ICON_STROKE_M,
-	ICON_SIZE_XL,
 } from '@/config/constantes';
 // Styles
-import styles from './MultiButtonFrame.module.css';
+import styles from './SettingsButtonMenu.module.css';
 
 export const MultiButtonFrame = () => {
 	const { isDarkMode } = setDarkMode();

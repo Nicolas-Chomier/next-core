@@ -4,8 +4,8 @@
 export const MEDIAQUERY_BREAKPOINT_SMARTPHONE =
 	'(min-width: 100px) and (max-width: 480px)';
 export const MEDIAQUERY_BREAKPOINT_TABLET_PORTRAIT =
-	'(min-width: 481px) and (max-width: 1024px)';
-export const MEDIAQUERY_BREAKPOINT_SMALL_LAPTOP = '(min-width: 1025px)';
+	'(min-width: 481px) and (max-width: 1023px)';
+export const MEDIAQUERY_BREAKPOINT_SMALL_LAPTOP = '(min-width: 1024px)';
 export const MEDIAQUERY_BREAKPOINT_LARGE_SCREEN = '(min-width: 1367px)';
 
 //* THEME

@@ -4,14 +4,17 @@ import React, { useState, useEffect } from 'react';
 // External modules / Third-party libraries
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
-import { LargeListSelect_multi } from '@/app/components/largeListSelect/LargeListSelect_multi';
+import { SelectMultiple } from '@/app/components/shared/select/largeList/SelectMultiple';
 // Hooks and utilities
 import { Controller, useForm } from 'react-hook-form';
 // Configuration
 import { ZodType, z } from 'zod';
 import { nanoid } from 'nanoid';
-import { LargeListSelect_simple } from '@/app/components/largeListSelect/LargeListSelect_simple';
+import { SelectLargeList } from '@/app/components/shared/select/largeList/SelectLargeList';
 import { Flex } from '@radix-ui/themes';
+
+import { SelectBasic } from '@/app/components/shared/select/basic/SelectBasic';
+import { CustomCard } from '@/app/components/core/layout/customCard/CustomCard';
 
 // Générer 10 strings aléatoires
 let stringList: any = [];
@@ -19,14 +22,21 @@ for (let i = 0; i < 15; i++) {
 	stringList.push(`${nanoid(8)}`);
 }
 
+let stringList2: any = [];
+for (let i = 0; i < 40; i++) {
+	stringList2.push(`${nanoid(9)}`);
+}
+//
 type TAddUserForm = {
-	test0: any;
-	test: any;
+	largeList: any;
+	multiple: any;
+	basic: any;
 };
 
 export const TestSchema: ZodType<TAddUserForm> = z.object({
-	test0: z.string().toLowerCase().trim().min(1),
-	test: z.array(z.string()),
+	largeList: z.string().toLowerCase().trim().min(1),
+	multiple: z.array(z.string()),
+	basic: z.string().toLowerCase().trim().min(1),
 });
 
 type TAddUserFormProps = {
@@ -65,24 +75,37 @@ const Informations = () => {
 				>
 					<Controller
 						control={control}
-						name='test0'
+						name='largeList'
 						render={({ field }) => (
-							<LargeListSelect_simple
+							<SelectLargeList
 								field={field}
 								contentToDisplay={stringList}
 							/>
 						)}
 					/>
+
 					<Controller
 						control={control}
-						name='test'
+						name='multiple'
 						render={({ field }) => (
-							<LargeListSelect_multi
+							<SelectMultiple
 								field={field}
 								contentToDisplay={stringList}
 							/>
 						)}
 					/>
+
+					<Controller
+						control={control}
+						name='basic'
+						render={({ field }) => (
+							<SelectBasic
+								field={field}
+								contentToDisplay={stringList2}
+							></SelectBasic>
+						)}
+					/>
+
 					<button>Soumettre</button>
 				</Flex>
 			</form>

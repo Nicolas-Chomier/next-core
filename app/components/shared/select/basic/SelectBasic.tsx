@@ -1,0 +1,76 @@
+// React core
+import React, { useEffect, useState } from 'react';
+// External modules / Third-party libraries
+import { ChevronDown, ChevronUp } from 'lucide-react';
+// Local components
+// Hooks and utilities
+import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { setDarkMode } from '@/app/store/core/darkMode';
+// Configuration
+import { ICON_SIZE_M, ICON_STROKE_M, ICON_STROKE_S } from '@/config/constantes';
+// Styles
+import styles from './SelectBasic.module.css';
+
+type TInputSelectProps = {
+	field: { name: string; onChange: (value: string) => void };
+	contentToDisplay: string[];
+	placeHolder?: string;
+};
+
+export const SelectBasic = ({
+	field,
+	contentToDisplay = ['...'],
+	placeHolder,
+}: TInputSelectProps) => {
+	const [controledContent, setControledContent] = useState<string[]>(['...']);
+	const [toggleIcon, setToggleIcon] = useState(false);
+	const { isDarkMode } = setDarkMode();
+
+	useEffect(() => {
+		setControledContent(contentToDisplay);
+	}, [contentToDisplay]);
+
+	const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		const value = e.target.value;
+		field.onChange(value);
+		setToggleIcon(true);
+	};
+
+	return (
+		<div className={styles.container}>
+			<select
+				id={field.name}
+				onChange={handleChange}
+				onClick={() => setToggleIcon(!toggleIcon)}
+				className={`${isDarkMode ? 'dark-theme' : ''} ${styles.select}`}
+				defaultValue={'DEFAULT'}
+			>
+				<option value='DEFAULT' disabled className={styles.placeHolder}>
+					{capitalizeFirstLetters(field.name) || placeHolder}
+				</option>
+
+				{controledContent.map((row, index) => (
+					<option
+						key={`${index}-${row}`}
+						value={row}
+						className={`${isDarkMode ? 'dark-theme' : ''} ${
+							styles.options
+						}`}
+					>
+						{row}
+					</option>
+				))}
+			</select>
+			<div className={styles.icon}>
+				{toggleIcon ? (
+					<ChevronUp size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
+				) : (
+					<ChevronDown
+						size={ICON_SIZE_M}
+						strokeWidth={ICON_STROKE_M}
+					/>
+				)}
+			</div>
+		</div>
+	);
+};

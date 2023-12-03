@@ -5,6 +5,11 @@ TODO LIST:
 	- Crypter les password dans ChangePasswordForm.tsx car il sont envoyé en clair
 	- La font est online (voir quoi faire)
 	- stylé les nouveaux composants
+	- Simplifié global.Css
+	- Revoir les variables css 
+	- refaire les inputs texts
+	- revoir la page admin
+
 
 2. Gestion du token dans les requetes de type GET
 

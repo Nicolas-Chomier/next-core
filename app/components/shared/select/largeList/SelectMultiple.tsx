@@ -1,4 +1,3 @@
-'use client';
 // React core
 import React, { useEffect, useRef, useState } from 'react';
 // External modules / Third-party libraries
@@ -12,23 +11,23 @@ import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters'
 // Configuration
 import {
 	ICON_SIZE_M,
-	ICON_STROKE_S,
+	ICON_STROKE_M,
 	STANDARD_COLOR_DANGER,
 } from '@/config/constantes';
 // Styles
 import styles from './LargeListSelect.module.css';
 
-type TLargeListMultiSelectProps = {
+type TSelectMultipleProps = {
 	field: any;
 	contentToDisplay: string[];
 	placeHolder?: string;
 };
 
-export const LargeListSelect_multi = ({
+export const SelectMultiple = ({
 	field,
 	contentToDisplay = ['...'],
-	placeHolder = 'Select...',
-}: TLargeListMultiSelectProps) => {
+	placeHolder,
+}: TSelectMultipleProps) => {
 	// State and references for display and interaction management
 	const [deploy, setDeploy] = useState(false);
 	const listRef = useRef<string[]>([]);
@@ -64,20 +63,14 @@ export const LargeListSelect_multi = ({
 	// JSX
 	return (
 		<div className={styles.container} ref={containerRef}>
-			<div className={styles.title}>
-				{capitalizeFirstLetters(field.name)}
-			</div>
-
-			<div
-				className={styles.trigger} /* onClick={() => setDeploy(true)} */
-			>
+			<div className={styles.trigger}>
 				{!field.value || field.value.length === 0 ? (
-					<span
+					<div
 						className={styles.placeHolder}
 						onClick={() => setDeploy(!deploy)}
 					>
-						{placeHolder}
-					</span>
+						{placeHolder || capitalizeFirstLetters(field.name)}
+					</div>
 				) : null}
 				<BadgeDisplayer field={field} handleClick={handleDelete} />
 				<ResetButton field={field} handleClick={handleReset} />
@@ -104,7 +97,7 @@ type TBadgeDisplayerProps = {
 const BadgeDisplayer = ({ field, handleClick }: TBadgeDisplayerProps) => {
 	const { isDarkMode } = setDarkMode();
 
-	if (!Array.isArray(field?.value)) {
+	if (!Array.isArray(field?.value) || field?.value.length === 0) {
 		return null;
 	}
 
@@ -127,7 +120,7 @@ const BadgeDisplayer = ({ field, handleClick }: TBadgeDisplayerProps) => {
 
 // ResetButton subcomponent to provide a reset button
 type TResetButtonProps = {
-	field: any;
+	field: { name: string; value: string[]; onChange: (value: string) => void };
 	handleClick: () => void;
 };
 const ResetButton = ({ field, handleClick }: TResetButtonProps) => {
@@ -143,7 +136,7 @@ const ResetButton = ({ field, handleClick }: TResetButtonProps) => {
 			{!field.value || field.value.length === 0 ? null : (
 				<XCircle
 					size={ICON_SIZE_M}
-					strokeWidth={ICON_STROKE_S}
+					strokeWidth={ICON_STROKE_M}
 					color={STANDARD_COLOR_DANGER}
 				/>
 			)}
@@ -163,9 +156,9 @@ const ExpandPanelSwitch = ({
 	return (
 		<div className={styles.toggle_switch} onClick={() => handleClick()}>
 			{toggle ? (
-				<ChevronUp size={ICON_SIZE_M} strokeWidth={ICON_STROKE_S} />
+				<ChevronUp size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 			) : (
-				<ChevronDown size={ICON_SIZE_M} strokeWidth={ICON_STROKE_S} />
+				<ChevronDown size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
 			)}
 		</div>
 	);

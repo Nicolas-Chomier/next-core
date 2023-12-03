@@ -1,29 +1,33 @@
 :root {
-	/* Theme colors */
-	--background-color: rgba(255, 255, 255, 0.85);
-	--background-color-mat: rgb(255, 255, 255);
-	--accent-text-color: #5753c6;
-	--theme-text-color: rgba(255, 255, 255, 0.95);
-	--text-color: rgba(0, 0, 0, 0.9);
-	--border-color: #d3d2d2;
-	--accent-color: #7b61ff; /* iris from RADIX UI => #5753c6;*/
-	--negativ-color: rgba(0, 0, 0, 0.8);
-	/* Other colors*/
+	/* MAIN THEME COLOR */
+	--accent-color: #7b61ff;
 	--success-color: #3e9b4f;
 	--warning-color: #ffba18;
 	--danger-color: #e54d2e;
-	/* Theme component size */
-	--navBar-height: 70px;
-	--largeListMultiSelect-height: 60px;
+
+	/* THEME COLOR LIGHT */
+	--background-card-color: rgba(255, 255, 255, 0.527);
+	--background-color: rgba(255, 255, 255, 0.85);
+	--background-color-mat: rgb(255, 255, 255);
+	--theme-text-color: rgba(255, 255, 255, 0.95);
+	--text-color: rgba(0, 0, 0, 0.9);
+	--border-color: #d3d2d2;
+	--negativ-color: rgba(0, 0, 0, 0.8);
 }
 
 .dark-theme {
-	--background-color: rgba(22, 22, 22, 0.75);
-	--background-color-mat: rgb(43, 43, 43);
-	--accent-text-color: #b1a9ff;
+	/* MAIN THEME COLOR */
+	--accent-color: #5472e4;
+	--success-color: #48b65c;
+	--warning-color: #f7cb65;
+	--danger-color: #fc7054;
+
+	/* THEME COLOR DARK */
+	--background-card-color: rgba(0, 0, 0, 0.527);
+	--background-color: rgba(22, 22, 22, 0.973);
+	--background-color-mat: rgb(20, 20, 20);
 	--text-color: rgba(255, 255, 255, 0.9);
 	--border-color: #52514e;
-	--accent-color: #5472e4;
 	--negativ-color: rgba(255, 255, 255, 0.9);
 	--theme-text-color: rgba(0, 0, 0, 0.95);
 }
