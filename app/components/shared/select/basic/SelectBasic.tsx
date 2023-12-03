@@ -7,7 +7,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 import { setDarkMode } from '@/app/store/core/darkMode';
 // Configuration
-import { ICON_SIZE_M, ICON_STROKE_M, ICON_STROKE_S } from '@/config/constantes';
+import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './SelectBasic.module.css';
 

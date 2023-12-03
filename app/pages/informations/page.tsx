@@ -15,6 +15,7 @@ import { Flex } from '@radix-ui/themes';
 
 import { SelectBasic } from '@/app/components/shared/select/basic/SelectBasic';
 import { CustomCard } from '@/app/components/core/layout/customCard/CustomCard';
+import { InputText } from '@/app/components/core/inputText/InputText';
 
 // Générer 10 strings aléatoires
 let stringList: any = [];
@@ -31,12 +32,14 @@ type TAddUserForm = {
 	largeList: any;
 	multiple: any;
 	basic: any;
+	email: any;
 };
 
 export const TestSchema: ZodType<TAddUserForm> = z.object({
 	largeList: z.string().toLowerCase().trim().min(1),
 	multiple: z.array(z.string()),
 	basic: z.string().toLowerCase().trim().min(1),
+	email: z.string().email().min(4, 'Email to short').max(90, 'Email to long'),
 });
 
 type TAddUserFormProps = {
@@ -59,9 +62,9 @@ const Informations = () => {
 	const submitData = async (data: TAddUserForm) => {
 		//handlePost(data);
 		console.log(data);
-		reset();
+		//reset();
 	};
-
+	//console.log(errors);
 	return (
 		<>
 			<h1>Infos</h1>
@@ -104,6 +107,16 @@ const Informations = () => {
 								contentToDisplay={stringList2}
 							></SelectBasic>
 						)}
+					/>
+
+					<InputText
+						type='email'
+						label='email'
+						placeholder='Email...'
+						disabled={false}
+						register={register}
+						setValue={setValue}
+						errors={errors}
 					/>
 
 					<button>Soumettre</button>

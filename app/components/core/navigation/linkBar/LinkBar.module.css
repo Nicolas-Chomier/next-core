@@ -27,7 +27,7 @@
 }
 
 .items:hover {
-	color: var(--accent-text-color);
+	color: var(--accent-color);
 }
 
 .actual_page {

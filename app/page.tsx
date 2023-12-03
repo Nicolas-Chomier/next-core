@@ -2,7 +2,7 @@
 // React core
 import { signIn } from 'next-auth/react';
 // External modules / Third-party libraries
-import { KeyRound } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { z, ZodType } from 'zod';
 // Local components
 import { InputText } from '@/app/components/core/inputText/InputText';
@@ -54,32 +54,31 @@ const RootPage = () => {
 	return (
 		<main className={styles.container}>
 			<div className={styles.title_wrapper}>
-				<KeyRound color='whitesmoke' size={'24'} />
+				<ShieldCheck color='whitesmoke' size={'24'} />
 				<p className={styles.title}>Bienvenue</p>
 			</div>
 
-			<form onSubmit={handleSubmit(submitData)} className={styles.form}>
-				<div className={styles.inputText_wrapper}>
-					<InputText
-						type='email'
-						label='email'
-						placeholder='Votre Email'
-						disabled={false}
-						register={register}
-						setValue={setValue}
-						errors={errors}
-					/>
+			<form onSubmit={handleSubmit(submitData)}>
+				<InputText
+					type='email'
+					label='email'
+					placeholder='Votre Email'
+					disabled={false}
+					register={register}
+					setValue={setValue}
+					errors={errors}
+				/>
 
-					<InputText
-						type='password'
-						label='password'
-						placeholder='Votre Mot de passe'
-						disabled={false}
-						register={register}
-						setValue={setValue}
-						errors={errors}
-					/>
-				</div>
+				<InputText
+					type='password'
+					label='password'
+					placeholder='Votre Mot de passe'
+					disabled={false}
+					register={register}
+					setValue={setValue}
+					errors={errors}
+				/>
+
 				<div className={styles.button_wrapper}>
 					{isSubmitting ? (
 						<LoadingSpinner />
