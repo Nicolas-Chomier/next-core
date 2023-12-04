@@ -10,18 +10,22 @@ import { setDarkMode } from '../store/core/darkMode';
 // Configuration
 // Styles
 import '@/app/styles/backGround.css';
-import { Nunito } from 'next/font/google';
+import { Quicksand } from 'next/font/google';
 
-const customFont = Nunito({
+const customFont = Quicksand({
 	subsets: ['latin'],
-	weight: '400',
+	weight: '500',
 	style: ['normal'],
 });
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 	const { isDarkMode } = setDarkMode();
 	return (
-		<main className={isDarkMode ? 'dark_background' : 'light_background'}>
+		<main
+			className={`${
+				isDarkMode ? 'dark_background' : 'light_background'
+			} ${customFont.className}`}
+		>
 			<NavigationBar />
 			<div>{children}</div>
 			<Footer />

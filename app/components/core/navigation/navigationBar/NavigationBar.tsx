@@ -8,6 +8,7 @@ import { LinkBar } from '@/app/components/core/navigation/linkBar/LinkBar';
 import { LinkButton } from '@/app/components/core/navigation/linkButtonMenu/LinkButtonMenu';
 import { Title } from '@/app/components/core/navigation/title/Title';
 // Hooks and utilities
+import { setDarkMode } from '@/app/store/core/darkMode';
 import useMediaQuery from '@/app/hooks/core/useMediaQuery';
 // Configuration
 import {
@@ -22,9 +23,12 @@ export const NavigationBar = () => {
 	const isSmartphoneSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_SMARTPHONE);
 	const isTabletSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_TABLET_PORTRAIT);
 	const isLaptopSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_SMALL_LAPTOP);
+	const { isDarkMode } = setDarkMode();
 
 	return (
-		<div className={styles.container}>
+		<div
+			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container}`}
+		>
 			{!isSmartphoneSize && (
 				<div className={styles.link_bar_wrapper}>
 					<LinkBar />

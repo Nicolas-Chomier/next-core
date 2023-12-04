@@ -3,11 +3,13 @@
 import React, { useState, ReactNode } from 'react';
 // External modules / Third-party libraries
 import { Info } from 'lucide-react';
+import { Flex, Text } from '@radix-ui/themes';
 // Local components
 import { AdminTable } from '@/app/components/core/adminTable/AdminTable';
 import { LoadingSpinner } from '@/app/components/shared/layout/loadingSpinner/LoadingSpinner';
 import { ErrorBox } from '@/app/components/shared/layout/errorBox/ErrorBox';
 import { AddUserForm } from '@/app/components/core/addUserForm/AddUserForm';
+import { Header } from '@/app/components/shared/layout/header/Header';
 // Hooks and utilities
 import { useSession } from 'next-auth/react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
@@ -71,17 +73,20 @@ const AdminPanel = () => {
 	// JSX
 	return (
 		<div className={styles.table_wrapper}>
-			<h1>{`Administration panel (${USERRANK} privileges)`}</h1>
-
-			<div className={styles.admin_table_wrapper}>
-				<div className={styles.admin_table_heading}>
-					{actionMessage && <Info className={styles.icon} />}
-					{capitalizeFirstLetters(actionMessage)}
+			<Header>
+				<Text size={'7'}>{`Administration Panel`}</Text>
+			</Header>
+			<Flex direction={'row'} gap={'9'}>
+				<div className={styles.admin_table_wrapper}>
+					<div className={styles.admin_table_heading}>
+						{actionMessage && <Info className={styles.icon} />}
+						{capitalizeFirstLetters(actionMessage)}
+					</div>
+					{DisplayUserTable(handleDelete)}
 				</div>
-				{DisplayUserTable(handleDelete)}
-			</div>
 
-			<AddUserForm handlePost={handlePost} />
+				<AddUserForm handlePost={handlePost} />
+			</Flex>
 		</div>
 	);
 };
