@@ -1,5 +1,5 @@
 // React core
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // External modules / Third-party libraries
 import { ChevronDown, ChevronUp } from 'lucide-react';
 // Local components
@@ -10,6 +10,7 @@ import { setDarkMode } from '@/app/store/core/darkMode';
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './SelectBasic.module.css';
+import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
 
 type TInputSelectProps = {
 	field: { name: string; onChange: (value: string) => void };
@@ -25,6 +26,13 @@ export const SelectBasic = ({
 	const [controledContent, setControledContent] = useState<string[]>(['...']);
 	const [toggleIcon, setToggleIcon] = useState(false);
 	const { isDarkMode } = setDarkMode();
+	const selectRef = useRef(null);
+
+	const handleClickOutside = () => {
+		setToggleIcon(false);
+	};
+
+	useOnClickOutside(selectRef, handleClickOutside);
 
 	useEffect(() => {
 		setControledContent(contentToDisplay);
@@ -39,6 +47,7 @@ export const SelectBasic = ({
 	return (
 		<div className={styles.container}>
 			<select
+				ref={selectRef}
 				id={field.name}
 				onChange={handleChange}
 				onClick={() => setToggleIcon(!toggleIcon)}

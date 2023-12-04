@@ -1,6 +1,5 @@
 // React core
 // External modules / Third-party libraries
-import { Box } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
 import { setDarkMode } from '@/app/store/core/darkMode';
@@ -8,12 +7,18 @@ import { setDarkMode } from '@/app/store/core/darkMode';
 // Styles
 import styles from './LoadingSpinner.module.css';
 
-export const LoadingSpinner = () => {
+type TLoadingSpinnerProps = {
+	color?: 'white' | 'black' | undefined;
+};
+
+export const LoadingSpinner = ({ color }: TLoadingSpinnerProps) => {
 	const { isDarkMode } = setDarkMode();
 
 	return (
-		<Box
-			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.spinner}`}
-		></Box>
+		<span
+			className={`${!color && isDarkMode ? 'dark-theme' : ''} ${
+				color === 'white' && styles.spinner_white
+			} ${color === 'black' && styles.spinner_black} ${styles.spinner}`}
+		></span>
 	);
 };

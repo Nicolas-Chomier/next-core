@@ -12,9 +12,7 @@ import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters'
 import styles from './UserInfos.module.css';
 import { LoadingSpinner } from '../../layout/loadingSpinner/LoadingSpinner';
 
-type TUserInfosProps = {};
-
-export const UserInfos = ({}: TUserInfosProps) => {
+export const UserInfos = () => {
 	const { data: session } = useSession();
 	const name = session?.user?.name;
 	const rank = session?.user?.rank;

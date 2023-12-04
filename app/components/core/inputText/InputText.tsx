@@ -1,17 +1,16 @@
 // React core
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 // External modules / Third-party libraries
+import { AtSign, KeyRound, Type } from 'lucide-react';
 // Local components
 // Hooks and utilities
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 import { handleKeyDown } from '@/app/utils/core/handleKeyDown';
+import { setDarkMode } from '@/app/store/core/darkMode';
 // Configuration
+import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './InputText.module.css';
-import { setDarkMode } from '@/app/store/core/darkMode';
-import { AtSign, KeyRound, Type } from 'lucide-react';
-import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
-import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
 
 type TInputTextProps = {
 	type: 'text' | 'email' | 'password';
@@ -33,10 +32,8 @@ export const InputText = ({
 	errors,
 }: TInputTextProps) => {
 	const { isDarkMode } = setDarkMode();
-	const [inputValue, setInputValue] = useState(false);
 
-	const renderIcon = useCallback(() => {
-		if (inputValue) return null;
+	/* const renderIcon = useCallback(() => {
 		switch (type) {
 			case 'email':
 				return (
@@ -65,16 +62,7 @@ export const InputText = ({
 			default:
 				return null;
 		}
-	}, [type, inputValue]);
-
-	const handleChange = (e: any) => {
-		console.log('Valeur actuelle :', e.target.value);
-		if (e.target.value) {
-			setInputValue(true);
-		} else {
-			setInputValue(false);
-		}
-	};
+	}, [type]); */
 
 	useEffect(() => {
 		if (disabled) setValue(label, null);
@@ -87,7 +75,6 @@ export const InputText = ({
 				type={type}
 				name={label}
 				{...register(label)}
-				onChange={handleChange}
 				placeholder={capitalizeFirstLetters(label) || placeholder}
 				onKeyDown={(e) => handleKeyDown(e, type)}
 				disabled={disabled}
@@ -96,7 +83,7 @@ export const InputText = ({
 				}`}
 			/>
 
-			{renderIcon()}
+			{/* {renderIcon()} */}
 
 			<p className={styles.error_text}>
 				{errors[label] ? errors[label].message : 'ㅤ'}

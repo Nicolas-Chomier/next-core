@@ -3,30 +3,17 @@
 import { signIn } from 'next-auth/react';
 // External modules / Third-party libraries
 import { ShieldCheck } from 'lucide-react';
-import { z, ZodType } from 'zod';
 // Local components
 import { InputText } from '@/app/components/core/inputText/InputText';
+import { LoadingSpinner } from './components/core/layout/loadingSpinner/LoadingSpinner';
 // Hooks and utilities
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 import { useForm } from 'react-hook-form';
 // Configuration
 import { DEFAULT_USER, LANDING_FOLDER_PATH } from '@/config/core/app_settings';
+import { SignInFormSchema, TSignInForm } from '@/app/utils/schema/signInForm';
 // Styles
 import styles from '@/app/styles/rootPage.module.css';
-import { LoadingSpinner } from './components/core/layout/loadingSpinner/LoadingSpinner';
-
-type TFormData = {
-	email: string;
-	password: string;
-};
-
-const SignInSchema: ZodType<TFormData> = z.object({
-	email: z.string().email().min(4, 'Email to short').max(90, 'Email to long'),
-	password: z.coerce
-		.string()
-		.min(3, 'Password to short')
-		.max(90, 'Password to long'),
-});
 
 const RootPage = () => {
 	const {
@@ -35,13 +22,13 @@ const RootPage = () => {
 		handleSubmit,
 		reset,
 		formState: { isSubmitting, errors }, //! spinner ?
-	} = useForm<TFormData>({
+	} = useForm<TSignInForm>({
 		defaultValues: DEFAULT_USER,
 		mode: 'onChange',
-		resolver: zodResolver(SignInSchema),
+		resolver: zodResolver(SignInFormSchema),
 	});
 
-	const submitData = async (data: TFormData) => {
+	const submitData = async (data: TSignInForm) => {
 		await signIn('credentials', {
 			username: data.email,
 			password: data.password,
@@ -53,12 +40,11 @@ const RootPage = () => {
 
 	return (
 		<main className={styles.container}>
-			<div className={styles.title_wrapper}>
-				<ShieldCheck color='whitesmoke' size={'24'} />
-				<p className={styles.title}>Bienvenue</p>
-			</div>
-
-			<form onSubmit={handleSubmit(submitData)}>
+			<form onSubmit={handleSubmit(submitData)} className={styles.form}>
+				<div className={styles.title_wrapper}>
+					<ShieldCheck color='whitesmoke' size={'32'} />
+					<p className={styles.title}>Bienvenue</p>
+				</div>
 				<InputText
 					type='email'
 					label='email'
@@ -81,7 +67,7 @@ const RootPage = () => {
 
 				<div className={styles.button_wrapper}>
 					{isSubmitting ? (
-						<LoadingSpinner />
+						<LoadingSpinner color={'white'} />
 					) : (
 						<button className={styles.button}>Valider</button>
 					)}

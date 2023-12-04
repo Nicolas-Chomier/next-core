@@ -8,7 +8,7 @@ import { InputSelect } from '@/app/components/core/inputSelect/InputSelect';
 import { InputText } from '@/app/components/core/inputText/InputText';
 import { CustomCard } from '@/app/components/core/layout/customCard/CustomCard';
 // Hooks and utilities
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import useMediaQuery from '@/app/hooks/core/useMediaQuery';
 // Configuration
 import {
@@ -21,6 +21,7 @@ import { USERS_CONFIG } from '@/config/core/app_settings';
 import { AddUserSchema } from '@/app/utils/schema/addUserForm';
 // Styles
 import styles from './AddUserForm.module.css';
+import { SelectBasic } from '../../shared/select/basic/SelectBasic';
 
 type TAddUserFormProps = {
 	handlePost: (obj: TAddUserForm) => void;
@@ -63,53 +64,49 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 			<Grid
 				gap='5'
 				columns={isSmartphoneSize ? '1' : '2'}
-				align={'center'}
+				align={'start'}
 				justify={'center'}
 			>
-				<CustomCard>
-					<InputText
-						type='email'
-						label='email'
-						placeholder='Email...'
-						disabled={false}
-						register={register}
-						setValue={setValue}
-						errors={errors}
-					/>
-				</CustomCard>
+				<InputText
+					type='email'
+					label='email'
+					placeholder='Email...'
+					disabled={false}
+					register={register}
+					setValue={setValue}
+					errors={errors}
+				/>
 
-				<CustomCard>
-					<InputText
-						type='text'
-						label='name'
-						placeholder='Name...'
-						disabled={false}
-						register={register}
-						setValue={setValue}
-						errors={errors}
-					/>
-				</CustomCard>
+				<InputText
+					type='text'
+					label='name'
+					placeholder='Name...'
+					disabled={false}
+					register={register}
+					setValue={setValue}
+					errors={errors}
+				/>
 
-				<CustomCard>
-					<InputText
-						type='password'
-						label='password'
-						placeholder='Password...'
-						disabled={false}
-						register={register}
-						setValue={setValue}
-						errors={errors}
-					/>
-				</CustomCard>
+				<InputText
+					type='password'
+					label='password'
+					placeholder='Password...'
+					disabled={false}
+					register={register}
+					setValue={setValue}
+					errors={errors}
+				/>
 
-				<CustomCard>
-					<InputSelect
-						label={'rank'}
-						itemList={rankingList}
-						control={control}
-						defaultValue={selectDefaultValue}
-					/>
-				</CustomCard>
+				<Controller
+					control={control}
+					name='rank'
+					render={({ field }) => (
+						<SelectBasic
+							field={field}
+							contentToDisplay={rankingList}
+						></SelectBasic>
+					)}
+				/>
 			</Grid>
 			{isValid ? (
 				<Button

@@ -4,32 +4,32 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-color: #7b61ff;
+	background-color: var(--accent-color);
 }
 .title_wrapper {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
-	gap: 15px;
-	padding: 15px;
+	gap: 10px;
+	padding: 0 0 20px 0;
 }
 
 .title {
-	font-size: 190%;
+	font-size: 210%;
 	color: whitesmoke;
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	height: 240px;
-	width: 220px;
-	background-color: whitesmoke;
-	padding: 13px;
-	border-radius: 28px;
+	height: 310px;
+	width: 280px;
+	padding: 20px 35px 40px 35px;
+	border-radius: 50px;
+	gap: 7px;
 }
 
 .inputText_wrapper {
@@ -52,15 +52,18 @@
 
 .button {
 	padding: 5px;
-	height: auto;
-	width: 100%;
-	cursor: pointer;
+	height: 44px;
+	width: 200px;
+	box-shadow: inset 0 0 0 2px whitesmoke;
 	border-radius: 40px;
 	font-size: 120%;
-	background-color: #7b61ff;
+	background-color: transparent;
 	color: whitesmoke;
+	cursor: pointer;
 }
 
 .button:hover {
-	background-color: #46a758;
+	box-shadow: inset 0 0 0 1px var(--gray-a7);
+	background-color: var(--success-color);
+	color: whitesmoke;
 }

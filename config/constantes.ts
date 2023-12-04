@@ -17,7 +17,7 @@ export const THEME_RADIUS = 'full';
 export const THEME_VARIANT = 'ghost';
 
 //* NATIVE_COMPONENT
-export const NATIVE_COMPONENT_RADIUS = 'large';
+export const NATIVE_COMPONENT_RADIUS = 'full';
 export const NATIVE_COMPONENT_PX_RADIUS = '9px';
 export const NATIVE_COMPONENT_VARIANT = 'solid';
 export const NATIVE_COMPONENT_ACCENTCOLOR = 'teal';

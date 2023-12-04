@@ -11,18 +11,23 @@
 
 .select {
 	position: relative;
-	width: 190px;
+	width: 200px;
 	height: 44px;
 	background-color: transparent;
 	text-align: center;
 	border: none;
 	outline: none;
-	font-size: 120%;
+	font-size: 115%;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	cursor: pointer;
 	z-index: 99;
+}
+
+.select:focus {
+	border: 2px solid rgba(0, 0, 0, 0.8);
+	border-radius: 50px;
 }
 
 .placeHolder {

@@ -1,7 +1,7 @@
 /* SELECT LARGE LIST + MULTIPLE */
 .container {
 	position: relative;
-	width: 190px;
+	width: 200px;
 	height: fit-content;
 	margin: 1px auto;
 }
@@ -30,7 +30,7 @@
 	align-items: center;
 	padding-left: 32px;
 	width: 100%;
-	font-size: 120%;
+	font-size: 115%;
 	cursor: pointer;
 }
 
@@ -110,5 +110,3 @@
 	background-color: var(--accent-color);
 	color: var(--background-color-mat);
 }
-
-/* SELECT BASIC */

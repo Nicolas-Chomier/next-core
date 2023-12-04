@@ -24,7 +24,7 @@ for (let i = 0; i < 15; i++) {
 }
 
 let stringList2: any = [];
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 8; i++) {
 	stringList2.push(`${nanoid(9)}`);
 }
 //
@@ -64,7 +64,7 @@ const Informations = () => {
 		console.log(data);
 		//reset();
 	};
-	//console.log(errors);
+
 	return (
 		<>
 			<h1>Infos</h1>
@@ -74,7 +74,7 @@ const Informations = () => {
 					direction={'column'}
 					align={'center'}
 					justify={'between'}
-					gap={'9'}
+					gap={'4'}
 				>
 					<Controller
 						control={control}
