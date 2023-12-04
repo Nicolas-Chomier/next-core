@@ -55,7 +55,7 @@
 	min-width: 70px;
 	height: 40px;
 	margin-top: 10px;
-	border: 1px solid var(--border-color);
+	border: 1px solid var(--gray-a7);
 	border-radius: 50px;
 	background-color: var(--background-color-mat);
 	cursor: pointer;
@@ -68,7 +68,7 @@
 	width: 91%;
 	height: 85%;
 	border-radius: 50px;
-	background-color: var(--accent-text-color);
+	background-color: var(--accent-color);
 	color: var(--background-color-mat);
 	cursor: pointer;
 }

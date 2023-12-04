@@ -4,11 +4,12 @@ import React from 'react';
 // External modules / Third-party libraries
 // Local components
 import { NavigationBar } from '@/app/components/core/navigation/navigationBar/NavigationBar';
+import { Footer } from '@/app/components/core/footer/Footer';
 // Hooks and utilities
 import { setDarkMode } from '../store/core/darkMode';
 // Configuration
 // Styles
-import '@/app/styles/background.css';
+import '@/app/styles/backGround.css';
 import { Nunito } from 'next/font/google';
 
 const customFont = Nunito({
@@ -20,13 +21,10 @@ const customFont = Nunito({
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 	const { isDarkMode } = setDarkMode();
 	return (
-		<main
-			className={`${customFont.className} ${
-				isDarkMode ? 'dark_background' : 'light_background'
-			}`}
-		>
+		<main className={isDarkMode ? 'dark_background' : 'light_background'}>
 			<NavigationBar />
 			<div>{children}</div>
+			<Footer />
 		</main>
 	);
 };

@@ -3,8 +3,7 @@ import React from 'react';
 // External modules / Third-party libraries
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
-import { InputText } from '@/app/components/core/inputText/InputText';
-import { CustomCard } from '@/app/components/core/layout/customCard/CustomCard';
+import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
 // Hooks and utilities
 import { useForm } from 'react-hook-form';
 import { Box, Button, Flex } from '@radix-ui/themes';
@@ -54,27 +53,23 @@ export const ChangePasswordForm = ({
 				justify={'center'}
 			>
 				<Flex gap='4' align={'center'} justify={'start'}>
-					<CustomCard>
-						<InputText
-							type='password'
-							label='password'
-							placeholder='Password...'
-							disabled={false}
-							register={register}
-							errors={errors}
-						/>
-					</CustomCard>
+					<InputText
+						type='password'
+						label='password'
+						placeholder='Password...'
+						disabled={false}
+						register={register}
+						errors={errors}
+					/>
 
-					<CustomCard>
-						<InputText
-							type='password'
-							label='confirm_password'
-							placeholder='Comfirm...'
-							disabled={false}
-							register={register}
-							errors={errors}
-						/>
-					</CustomCard>
+					<InputText
+						type='password'
+						label='confirm_password'
+						placeholder='Comfirm...'
+						disabled={false}
+						register={register}
+						errors={errors}
+					/>
 				</Flex>
 
 				<Box /* className={styles.form_box} */>

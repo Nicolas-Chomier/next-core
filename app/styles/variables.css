@@ -4,15 +4,12 @@
 	--success-color: #3e9b4f;
 	--warning-color: #ffba18;
 	--danger-color: #e54d2e;
-
+	--white-color: #ececec;
+	--black-color: #131313;
 	/* THEME COLOR LIGHT */
-	--background-card-color: rgba(255, 255, 255, 0.527);
 	--background-color: rgba(255, 255, 255, 0.85);
 	--background-color-mat: rgb(255, 255, 255);
-	--theme-text-color: rgba(255, 255, 255, 0.95);
 	--text-color: rgba(0, 0, 0, 0.9);
-	--border-color: #eeeeee;
-	--negativ-color: rgba(0, 0, 0, 0.8);
 }
 
 .dark-theme {
@@ -21,13 +18,13 @@
 	--success-color: #48b65c;
 	--warning-color: #f7cb65;
 	--danger-color: #fc7054;
-
+	--white-color: #ececec;
+	--black-color: #131313;
 	/* THEME COLOR DARK */
-	--background-card-color: rgba(0, 0, 0, 0.527);
-	--background-color: rgba(22, 22, 22, 0.973);
+	--background-color: rgba(22, 22, 22, 0.9);
 	--background-color-mat: rgb(20, 20, 20);
 	--text-color: rgba(255, 255, 255, 0.9);
-	--border-color: #52514e;
-	--negativ-color: rgba(255, 255, 255, 0.9);
-	--theme-text-color: rgba(0, 0, 0, 0.95);
 }
+
+/* SHARED STYLE */
+/* Border color --gray-a7 */

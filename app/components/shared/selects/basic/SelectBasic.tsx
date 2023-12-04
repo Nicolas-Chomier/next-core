@@ -10,7 +10,7 @@ import { setDarkMode } from '@/app/store/core/darkMode';
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './SelectBasic.module.css';
-import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
+import { useOnClickOutside } from '@/app/hooks/core/useOnClickOutside';
 
 type TInputSelectProps = {
 	field: { name: string; onChange: (value: string) => void };

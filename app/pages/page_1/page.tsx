@@ -8,6 +8,6 @@ import React, { useState, useEffect } from 'react';
 type TPage_1Props = {};
 
 const Page_1 = ({}: TPage_1Props) => {
-	return <h1>Page_1</h1>;
+	return <></>;
 };
 export default Page_1;

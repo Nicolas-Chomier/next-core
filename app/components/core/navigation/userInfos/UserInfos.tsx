@@ -3,6 +3,7 @@ import React from 'react';
 // External modules / Third-party libraries
 import { Avatar, Text } from '@radix-ui/themes';
 // Local components
+import { LoadingSpinner } from '@/app/components/shared/layout/loadingSpinner/LoadingSpinner';
 // Hooks and utilities
 import { useSession } from 'next-auth/react';
 import { setDarkMode } from '@/app/store/core/darkMode';
@@ -10,7 +11,6 @@ import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters'
 // Configuration
 // Styles
 import styles from './UserInfos.module.css';
-import { LoadingSpinner } from '../../layout/loadingSpinner/LoadingSpinner';
 
 export const UserInfos = () => {
 	const { data: session } = useSession();

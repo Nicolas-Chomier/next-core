@@ -4,18 +4,18 @@ import React, { useState, useEffect } from 'react';
 // External modules / Third-party libraries
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
-import { SelectMultiple } from '@/app/components/shared/select/largeList/SelectMultiple';
+import { SelectMultiple } from '@/app/components/shared/selects/largeList/SelectMultiple';
 // Hooks and utilities
 import { Controller, useForm } from 'react-hook-form';
 // Configuration
 import { ZodType, z } from 'zod';
 import { nanoid } from 'nanoid';
-import { SelectLargeList } from '@/app/components/shared/select/largeList/SelectLargeList';
+import { SelectLargeList } from '@/app/components/shared/selects/largeList/SelectLargeList';
 import { Flex } from '@radix-ui/themes';
 
-import { SelectBasic } from '@/app/components/shared/select/basic/SelectBasic';
-import { CustomCard } from '@/app/components/core/layout/customCard/CustomCard';
-import { InputText } from '@/app/components/core/inputText/InputText';
+import { SelectBasic } from '@/app/components/shared/selects/basic/SelectBasic';
+import { CustomCard } from '@/app/components/shared/layout/customCard/CustomCard';
+import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
 
 // Générer 10 strings aléatoires
 let stringList: any = [];
@@ -46,7 +46,7 @@ type TAddUserFormProps = {
 	handlePost: (obj: TAddUserForm) => void;
 };
 
-const Informations = () => {
+const SandBox = () => {
 	const {
 		setValue,
 		register,
@@ -67,8 +67,6 @@ const Informations = () => {
 
 	return (
 		<>
-			<h1>Infos</h1>
-
 			<form onSubmit={handleSubmit(submitData)}>
 				<Flex
 					direction={'column'}
@@ -125,4 +123,4 @@ const Informations = () => {
 		</>
 	);
 };
-export default Informations;
+export default SandBox;

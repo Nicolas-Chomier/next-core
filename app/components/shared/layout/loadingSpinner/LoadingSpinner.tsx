@@ -11,7 +11,7 @@ type TLoadingSpinnerProps = {
 	color?: 'white' | 'black' | undefined;
 };
 
-export const LoadingSpinner = ({ color }: TLoadingSpinnerProps) => {
+export const LoadingSpinner = ({ color = undefined }: TLoadingSpinnerProps) => {
 	const { isDarkMode } = setDarkMode();
 
 	return (

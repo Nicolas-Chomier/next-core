@@ -12,10 +12,6 @@ import styles from './Dashboard.module.css';
 type TLandingPagesProps = {};
 
 const LandingPage = ({}: TLandingPagesProps) => {
-	return (
-		<>
-			<h1>Home</h1>
-		</>
-	);
+	return <></>;
 };
 export default LandingPage;

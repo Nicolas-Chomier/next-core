@@ -4,8 +4,8 @@ import { signIn } from 'next-auth/react';
 // External modules / Third-party libraries
 import { ShieldCheck } from 'lucide-react';
 // Local components
-import { InputText } from '@/app/components/core/inputText/InputText';
-import { LoadingSpinner } from './components/core/layout/loadingSpinner/LoadingSpinner';
+import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
+import { LoadingSpinner } from '@/app/components/shared/layout/loadingSpinner/LoadingSpinner';
 // Hooks and utilities
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 import { useForm } from 'react-hook-form';
@@ -21,7 +21,7 @@ const RootPage = () => {
 		register,
 		handleSubmit,
 		reset,
-		formState: { isSubmitting, errors }, //! spinner ?
+		formState: { isSubmitting, errors },
 	} = useForm<TSignInForm>({
 		defaultValues: DEFAULT_USER,
 		mode: 'onChange',

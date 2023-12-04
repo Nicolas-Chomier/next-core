@@ -4,9 +4,8 @@ import React from 'react';
 import { Button, Grid } from '@radix-ui/themes';
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
-import { InputSelect } from '@/app/components/core/inputSelect/InputSelect';
-import { InputText } from '@/app/components/core/inputText/InputText';
-import { CustomCard } from '@/app/components/core/layout/customCard/CustomCard';
+import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
+import { SelectBasic } from '@/app/components/shared/selects/basic/SelectBasic';
 // Hooks and utilities
 import { Controller, useForm } from 'react-hook-form';
 import useMediaQuery from '@/app/hooks/core/useMediaQuery';
@@ -21,7 +20,6 @@ import { USERS_CONFIG } from '@/config/core/app_settings';
 import { AddUserSchema } from '@/app/utils/schema/addUserForm';
 // Styles
 import styles from './AddUserForm.module.css';
-import { SelectBasic } from '../../shared/select/basic/SelectBasic';
 
 type TAddUserFormProps = {
 	handlePost: (obj: TAddUserForm) => void;

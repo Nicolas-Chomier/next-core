@@ -30,7 +30,7 @@ export const APP_SETTINGS_PAGES = {
 export const PAGES_NAMES = [
 	{ folderName: 'page_1', givenName: 'page1' },
 	{ folderName: 'page_2', givenName: 'page2' },
-	{ folderName: 'informations', givenName: 'infos' },
+	{ folderName: 'sandBox', givenName: 'Tests' },
 ];
 
 //* SIGN IN OPTIONS

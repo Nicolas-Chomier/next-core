@@ -5,8 +5,8 @@ import React, { useState, ReactNode } from 'react';
 import { Info } from 'lucide-react';
 // Local components
 import { AdminTable } from '@/app/components/core/adminTable/AdminTable';
-import { LoadingSpinner } from '@/app/components/core/layout/loadingSpinner/LoadingSpinner';
-import { ErrorBox } from '@/app/components/core/layout/errorBox/ErrorBox';
+import { LoadingSpinner } from '@/app/components/shared/layout/loadingSpinner/LoadingSpinner';
+import { ErrorBox } from '@/app/components/shared/layout/errorBox/ErrorBox';
 import { AddUserForm } from '@/app/components/core/addUserForm/AddUserForm';
 // Hooks and utilities
 import { useSession } from 'next-auth/react';

@@ -20,7 +20,7 @@ export const THEME_VARIANT = 'ghost';
 export const NATIVE_COMPONENT_RADIUS = 'full';
 export const NATIVE_COMPONENT_PX_RADIUS = '9px';
 export const NATIVE_COMPONENT_VARIANT = 'solid';
-export const NATIVE_COMPONENT_ACCENTCOLOR = 'teal';
+export const NATIVE_COMPONENT_ACCENTCOLOR = 'iris';
 export const NATIVE_COMPONENT_GRAYCOLOR = 'grey';
 
 //* STANDARD_COLOR

@@ -4,7 +4,7 @@
 	width: fit-content;
 	height: 40px;
 	border: 1px solid;
-	border-color: var(--border-color);
+	border-color: var(--gray-a7);
 	background-color: var(--background-color);
 	border-radius: 50px;
 	padding: 2px;

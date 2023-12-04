@@ -18,19 +18,3 @@ a {
 	font-family: inherit;
 	color: inherit;
 }
-/* a virer */
-h1 {
-	margin: 5vh 0;
-	text-align: center;
-	text-decoration: underline;
-	font-weight: bolder;
-	font-size: 200%;
-}
-
-/* Special class */
-.component_wrapper_smartPhone_first {
-	padding: 0px;
-	width: 180px;
-	height: 55px;
-	min-width: 150px;
-}
