@@ -42,7 +42,7 @@ export const SelectMultiple = ({
 		field.onChange([...listRef.current]);
 	};
 	const handleReset = () => {
-		field.onChange([]), (listRef.current = []);
+		field.onChange(null), (listRef.current = []);
 		setDeploy(false);
 	};
 	const handleSelect = (item: string) => {

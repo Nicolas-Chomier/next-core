@@ -17,6 +17,7 @@ import { SelectBasic } from '@/app/components/shared/selects/basic/SelectBasic';
 
 import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
 import { DatePickers } from '@/app/components/shared/dates/DatePickers';
+import { FormButton } from '@/app/components/shared/buttons/FormButton';
 
 // Générer 10 strings aléatoires
 let stringList: any = [];
@@ -24,36 +25,34 @@ for (let i = 0; i < 15; i++) {
 	stringList.push(`${nanoid(8)}`);
 }
 
-let stringList2: any = [];
+/* let stringList2: any = [];
 for (let i = 0; i < 8; i++) {
 	stringList2.push(`${nanoid(9)}`);
-}
+} */
 //
 type TAddUserForm = {
 	largeList: any;
-	/*multiple: any;
-	basic: any;
+	multiple: any;
+	/*basic: any;
 	email: any; */
 	/* dates: any;
 	startDate: any;
 	endDate: any; */
-	dateRange: any;
+	/* dateRange: any; */
 };
-
-const DATEFORMAT = 'dd/MM/yyyy';
-const MINIMUM_ALLOWED_DATE = new Date('01/01/2022');
 
 export const TestSchema: ZodType<TAddUserForm> = z.object({
 	largeList: z.string().toLowerCase().trim().min(1),
-	/* multiple: z.array(z.string()),
-	basic: z.string().toLowerCase().trim().min(1),
+	/*dates: z.date(),*/
+	multiple: z.array(z.string()),
+	/*basic: z.string().toLowerCase().trim().min(1),
 	email: z.string().email().min(4, 'Email to short').max(90, 'Email to long'),
-	 */ /* dates: z.date(),
+
 	startDate: z.coerce
 		.date()
 		.min(MINIMUM_ALLOWED_DATE, { message: 'Too old' }),
-	endDate: z.coerce.date(), */
-	dateRange: z.tuple([z.date(), z.date()]),
+	endDate: z.coerce.date(),
+	dateRange: z.tuple([z.date(), z.date()]), */
 });
 
 type TAddUserFormProps = {
@@ -106,7 +105,7 @@ const SandBox = () => {
 						)}
 					/>
 
-					{/*	<Controller
+					<Controller
 						control={control}
 						name='multiple'
 						render={({ field }) => (
@@ -117,7 +116,7 @@ const SandBox = () => {
 						)}
 					/>
 
-					<Controller
+					{/*	<Controller
 						control={control}
 						name='basic'
 						render={({ field }) => (
@@ -138,13 +137,14 @@ const SandBox = () => {
 						errors={errors}
 					/> */}
 
-					<Controller
+					{/* <Controller
 						control={control}
 						name='dateRange'
 						render={({ field }) => <DatePickers field={field} />}
-					/>
+					/> */}
 
-					<button>Soumettre</button>
+					{/* <button>ddd</button> */}
+					<FormButton display={isValid} />
 				</Flex>
 			</form>
 		</>

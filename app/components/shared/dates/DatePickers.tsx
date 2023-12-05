@@ -53,7 +53,7 @@ export const DatePickers = ({
 	};
 
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container} ${styles.neon}`}>
 			<DatePicker
 				selectsRange={true}
 				startDate={startDate}
