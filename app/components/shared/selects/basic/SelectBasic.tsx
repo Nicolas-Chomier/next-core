@@ -4,13 +4,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 // Local components
 // Hooks and utilities
+import { useOnClickOutside } from '@/app/hooks/core/useOnClickOutside';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 import { setDarkMode } from '@/app/store/core/darkMode';
 // Configuration
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './SelectBasic.module.css';
-import { useOnClickOutside } from '@/app/hooks/core/useOnClickOutside';
 
 type TInputSelectProps = {
 	field: { name: string; onChange: (value: string) => void };
