@@ -1,7 +1,7 @@
 // React core
 import React from 'react';
 // External modules / Third-party libraries
-import { Button, Grid } from '@radix-ui/themes';
+import { Button, Grid, Text } from '@radix-ui/themes';
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
 import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
@@ -59,8 +59,9 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 
 	return (
 		<form onSubmit={handleSubmit(submitData)} className={styles.container}>
+			<Text size={'6'}>Add new user</Text>
 			<Grid
-				gap='5'
+				gap='3'
 				columns={isSmartphoneSize ? '1' : '2'}
 				align={'start'}
 				justify={'center'}
@@ -116,7 +117,9 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 				>
 					ADD USER
 				</Button>
-			) : null}
+			) : (
+				<div className={styles.button}></div>
+			)}
 		</form>
 	);
 };

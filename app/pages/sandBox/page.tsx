@@ -14,7 +14,7 @@ import { SelectLargeList } from '@/app/components/shared/selects/largeList/Selec
 import { Flex } from '@radix-ui/themes';
 
 import { SelectBasic } from '@/app/components/shared/selects/basic/SelectBasic';
-import { CustomCard } from '@/app/components/shared/layout/customCard/CustomCard';
+
 import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
 import { DatePickers } from '@/app/components/shared/dates/DatePickers';
 

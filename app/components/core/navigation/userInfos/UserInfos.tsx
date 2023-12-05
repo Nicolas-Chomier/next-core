@@ -33,10 +33,10 @@ export const UserInfos = () => {
 				className={styles.avatar}
 			/>
 			<div className={styles.text_wrapper}>
-				<Text as={'p'} size={'3'} weight={'regular'}>
+				<Text as={'p'} size={'3'} trim={'both'} weight={'regular'}>
 					{capitalizeFirstLetters(name)}
 				</Text>
-				<Text as={'p'} size={'2'} weight={'regular'}>
+				<Text as={'p'} size={'2'} trim={'both'} weight={'regular'}>
 					{capitalizeFirstLetters(rank)}
 				</Text>
 			</div>

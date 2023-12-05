@@ -8,7 +8,8 @@ TODO LIST:
 	- Simplifié global.Css
 	- Revoir les variables css 
 	- refaire les inputs texts
-	- revoir la page admin
+	- revoir la page admin trop de déclinaison (admin master ...)
+	- refaire le design de la page admin
 
 
 2. Gestion du token dans les requetes de type GET
