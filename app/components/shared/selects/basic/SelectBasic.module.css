@@ -18,7 +18,7 @@
 	text-align: center;
 	border: none;
 	outline: none;
-	font-size: 115%;
+	font-size: 105%;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -64,7 +64,6 @@
 
 .options {
 	background-color: var(--background-color);
-	color: red;
 	align-items: center;
 	justify-content: flex-start;
 	display: flex;

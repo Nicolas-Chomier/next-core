@@ -9,11 +9,37 @@
 }
 
 .button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
 	background-color: var(--success-color);
 	cursor: pointer;
 }
+
+.mini_spinner {
+	width: 15px;
+	height: 15px;
+	border: 5px dotted var(--text-color);
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+	animation: rotation 1.5s linear infinite;
+}
+
 .dummy {
 	cursor: none;
 	background-color: var(--background-color-low-profile);
+	font-style: italic;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

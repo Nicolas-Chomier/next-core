@@ -20,6 +20,7 @@ import { USERS_CONFIG } from '@/config/core/app_settings';
 import { AddUserSchema } from '@/app/utils/schema/addUserForm';
 // Styles
 import styles from './AddUserForm.module.css';
+import { FormButton } from '../../shared/buttons/FormButton';
 
 type TAddUserFormProps = {
 	handlePost: (obj: TAddUserForm) => void;
@@ -45,7 +46,7 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 		handleSubmit,
 		reset,
 		control,
-		formState: { errors, isValid },
+		formState: { errors, isValid, isLoading },
 	} = useForm<TAddUserForm>({
 		mode: 'onChange',
 		resolver: zodResolver(AddUserSchema),
@@ -107,19 +108,7 @@ export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 					)}
 				/>
 			</Grid>
-			{isValid ? (
-				<Button
-					color={STANDARD_COLOR_SUCCESS}
-					variant={NATIVE_COMPONENT_VARIANT}
-					radius={NATIVE_COMPONENT_RADIUS}
-					className={styles.button}
-					size={'3'}
-				>
-					ADD USER
-				</Button>
-			) : (
-				<div className={styles.button}></div>
-			)}
+			<FormButton display={isValid} isLoading={isLoading}></FormButton>
 		</form>
 	);
 };

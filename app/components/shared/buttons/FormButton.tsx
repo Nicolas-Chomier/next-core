@@ -8,9 +8,9 @@ import { setDarkMode } from '@/app/store/core/darkMode';
 // Styles
 import styles from './FormButton.module.css';
 
-type TFormButtonProps = { display: boolean };
+type TFormButtonProps = { display: boolean; isLoading: boolean };
 
-export const FormButton = ({ display }: TFormButtonProps) => {
+export const FormButton = ({ display, isLoading }: TFormButtonProps) => {
 	const { isDarkMode } = setDarkMode();
 	return (
 		<>
@@ -21,7 +21,8 @@ export const FormButton = ({ display }: TFormButtonProps) => {
 						styles.container
 					} ${styles.button}`}
 				>
-					Validation
+					{isLoading && <span className={styles.mini_spinner}></span>}
+					{isLoading ? 'Chargement...' : 'Validation'}
 				</button>
 			) : (
 				<div
@@ -29,7 +30,7 @@ export const FormButton = ({ display }: TFormButtonProps) => {
 						styles.container
 					} ${styles.dummy}`}
 				>
-					En attente
+					Validation
 				</div>
 			)}
 		</>

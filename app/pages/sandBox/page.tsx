@@ -66,7 +66,7 @@ const SandBox = () => {
 		handleSubmit,
 		reset,
 		control,
-		formState: { errors, isValid },
+		formState: { errors, isValid, isLoading },
 	} = useForm<TAddUserForm>({
 		mode: 'onChange',
 		resolver: zodResolver(TestSchema),
@@ -144,7 +144,7 @@ const SandBox = () => {
 					/> */}
 
 					{/* <button>ddd</button> */}
-					<FormButton display={isValid} />
+					<FormButton display={isValid} isLoading={isLoading} />
 				</Flex>
 			</form>
 		</>
