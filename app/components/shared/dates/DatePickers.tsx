@@ -50,10 +50,11 @@ export const DatePickers = ({
 
 	const handleReset = () => {
 		setDatesRange([null, null]);
+		field.onChange([null, null]);
 	};
 
 	return (
-		<div className={`${styles.container} ${styles.neon}`}>
+		<div className={`${styles.container}`}>
 			<DatePicker
 				selectsRange={true}
 				startDate={startDate}

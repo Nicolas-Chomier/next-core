@@ -12,6 +12,7 @@ import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters'
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './LargeListSelect.module.css';
+import { padString } from '@/app/utils/core/padString';
 
 type TSelectLargeListProps = {
 	field: { name: string; value: string; onChange: (value: string) => void };
@@ -42,7 +43,7 @@ export const SelectLargeList = ({
 		<div className={styles.container} ref={containerRef}>
 			<div className={styles.trigger} onClick={() => setDeploy(!deploy)}>
 				<div className={styles.placeHolder}>
-					{field.value ||
+					{padString(field.value) ||
 						placeHolder ||
 						capitalizeFirstLetters(field.name)}
 				</div>

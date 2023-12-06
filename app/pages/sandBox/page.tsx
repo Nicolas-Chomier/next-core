@@ -21,8 +21,8 @@ import { FormButton } from '@/app/components/shared/buttons/FormButton';
 
 // Générer 10 strings aléatoires
 let stringList: any = [];
-for (let i = 0; i < 15; i++) {
-	stringList.push(`${nanoid(8)}`);
+for (let i = 0; i < 100; i++) {
+	stringList.push(`${nanoid(15)}`);
 }
 
 /* let stringList2: any = [];
@@ -33,8 +33,8 @@ for (let i = 0; i < 8; i++) {
 type TAddUserForm = {
 	largeList: any;
 	multiple: any;
-	/*basic: any;
-	email: any; */
+	basic: any;
+	/*email: any; */
 	/* dates: any;
 	startDate: any;
 	endDate: any; */
@@ -45,8 +45,8 @@ export const TestSchema: ZodType<TAddUserForm> = z.object({
 	largeList: z.string().toLowerCase().trim().min(1),
 	/*dates: z.date(),*/
 	multiple: z.array(z.string()),
-	/*basic: z.string().toLowerCase().trim().min(1),
-	email: z.string().email().min(4, 'Email to short').max(90, 'Email to long'),
+	basic: z.string().toLowerCase().trim().min(1),
+	/*email: z.string().email().min(4, 'Email to short').max(90, 'Email to long'),
 
 	startDate: z.coerce
 		.date()
@@ -116,18 +116,18 @@ const SandBox = () => {
 						)}
 					/>
 
-					{/*	<Controller
+					<Controller
 						control={control}
 						name='basic'
 						render={({ field }) => (
 							<SelectBasic
 								field={field}
-								contentToDisplay={stringList2}
+								contentToDisplay={stringList}
 							></SelectBasic>
 						)}
 					/>
 
-					<InputText
+					{/*	<InputText
 						type='email'
 						label='email'
 						placeholder='Email...'
