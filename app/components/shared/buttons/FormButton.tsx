@@ -21,8 +21,11 @@ export const FormButton = ({ display, isLoading }: TFormButtonProps) => {
 						styles.container
 					} ${styles.button}`}
 				>
-					{isLoading && <span className={styles.mini_spinner}></span>}
-					{isLoading ? 'Chargement...' : 'Validation'}
+					{isLoading ? (
+						<span className={styles.mini_spinner}></span>
+					) : (
+						'Validation'
+					)}
 				</button>
 			) : (
 				<div

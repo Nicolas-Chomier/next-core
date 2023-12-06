@@ -19,20 +19,21 @@
 }
 
 .mini_spinner {
-	width: 15px;
-	height: 15px;
-	border: 5px dotted var(--text-color);
+	width: 25px;
+	height: 25px;
+	border: 4px dotted var(--text-color);
 	border-radius: 50%;
 	display: inline-block;
 	position: relative;
 	box-sizing: border-box;
-	animation: rotation 1.5s linear infinite;
+	animation: rotation 2s linear infinite;
 }
 
 .dummy {
 	cursor: none;
 	background-color: var(--background-color-low-profile);
 	font-style: italic;
+	color: var(--grey-color);
 }
 
 @keyframes rotation {

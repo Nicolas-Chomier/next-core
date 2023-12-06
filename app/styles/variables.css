@@ -6,6 +6,7 @@
 	--danger-color: #e54d2e;
 	--white-color: #ececec;
 	--black-color: #131313;
+	--grey-color: #8d8d8d;
 	/* THEME COLOR LIGHT */
 	--background-color: rgba(255, 255, 255, 0.85);
 	--background-color-mat: rgb(255, 255, 255);
@@ -22,6 +23,7 @@
 	--danger-color: #fc7054;
 	--white-color: #ececec;
 	--black-color: #131313;
+	--grey-color: #606060;
 	/* THEME COLOR DARK */
 	--background-color: rgba(22, 22, 22, 0.9);
 	--background-color-mat: rgb(20, 20, 20);

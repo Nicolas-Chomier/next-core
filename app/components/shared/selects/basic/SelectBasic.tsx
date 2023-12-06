@@ -45,7 +45,7 @@ export const SelectBasic = ({
 	};
 
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container}`}>
 			<select
 				ref={selectRef}
 				id={field.name}

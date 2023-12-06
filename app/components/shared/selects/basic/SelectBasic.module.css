@@ -23,8 +23,6 @@
 	-moz-appearance: none;
 	appearance: none;
 	cursor: pointer;
-	z-index: 99;
-
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -64,8 +62,5 @@
 
 .options {
 	background-color: var(--background-color);
-	align-items: center;
-	justify-content: flex-start;
-	display: flex;
 	max-width: 200px;
 }

@@ -80,13 +80,6 @@ const SandBox = () => {
 
 	return (
 		<>
-			{/* 	{errors.dateRange && errors.dateRange[0] && (
-				<p>{errors.dateRange[0].message}</p>
-			)}
-			{errors.dateRange && errors.dateRange[1] && (
-				<p>{errors.dateRange[1].message}</p>
-			)} */}
-
 			<form onSubmit={handleSubmit(submitData)}>
 				<Flex
 					direction={'column'}
@@ -144,7 +137,7 @@ const SandBox = () => {
 					/> */}
 
 					{/* <button>ddd</button> */}
-					<FormButton display={isValid} isLoading={isLoading} />
+					<FormButton display={isValid} isLoading={false} />
 				</Flex>
 			</form>
 		</>
