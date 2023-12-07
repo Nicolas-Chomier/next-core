@@ -22,7 +22,7 @@ export const Title = () => {
 		<Link href={LANDING_FOLDER_PATH}>
 			<Text
 				as='p'
-				className={`${isDarkMode ? 'dark-theme' : ''} ${styles.title} `}
+				className={`${isDarkMode ? 'dark-theme' : ''} ${styles.title}`}
 			>
 				{capitalizeFirstLetters(APPLICATION_NAME)}
 			</Text>

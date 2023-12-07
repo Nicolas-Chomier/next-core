@@ -36,7 +36,13 @@ export const UserInfos = () => {
 				<Text as={'p'} size={'3'} trim={'both'} weight={'regular'}>
 					{capitalizeFirstLetters(name)}
 				</Text>
-				<Text as={'p'} size={'2'} trim={'both'} weight={'regular'}>
+				<Text
+					as={'p'}
+					size={'2'}
+					trim={'both'}
+					weight={'regular'}
+					className={styles.animated_text}
+				>
 					{capitalizeFirstLetters(rank)}
 				</Text>
 			</div>

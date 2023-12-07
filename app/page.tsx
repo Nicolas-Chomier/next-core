@@ -21,7 +21,7 @@ const RootPage = () => {
 		register,
 		handleSubmit,
 		reset,
-		formState: { isSubmitting, errors },
+		formState: { errors, isSubmitting },
 	} = useForm<TSignInForm>({
 		defaultValues: DEFAULT_USER,
 		mode: 'onChange',
@@ -69,7 +69,9 @@ const RootPage = () => {
 					{isSubmitting ? (
 						<LoadingSpinner color={'white'} />
 					) : (
-						<button className={styles.button}>Valider</button>
+						<button type='submit' className={styles.button}>
+							Valider
+						</button>
 					)}
 				</div>
 			</form>

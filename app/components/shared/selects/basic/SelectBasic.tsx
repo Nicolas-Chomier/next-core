@@ -62,9 +62,7 @@ export const SelectBasic = ({
 					<option
 						key={`${index}-${row}`}
 						value={row}
-						className={`${isDarkMode ? 'dark-theme' : ''} ${
-							styles.options
-						}`}
+						className={styles.options}
 					>
 						{row}
 					</option>

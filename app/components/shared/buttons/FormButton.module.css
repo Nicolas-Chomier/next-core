@@ -33,7 +33,7 @@
 	cursor: none;
 	background-color: var(--background-color-low-profile);
 	font-style: italic;
-	color: var(--grey-color);
+	color: var(--text-color);
 }
 
 @keyframes rotation {

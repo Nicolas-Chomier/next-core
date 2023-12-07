@@ -1,5 +1,6 @@
 .title {
-	/* position: absolute; */
-	font-size: 240%;
+	padding: 0;
+	margin: 0;
+	font-size: 250%;
 	color: var(--text-color);
 }

@@ -10,13 +10,28 @@ import { setDarkMode } from '../store/core/darkMode';
 // Configuration
 // Styles
 import '@/app/styles/backGround.css';
-import { Quicksand } from 'next/font/google';
+// Fonts
 
-const customFont = Quicksand({
+//import { Quicksand } from 'next/font/google';
+/* const customFont = Quicksand({
 	subsets: ['latin'],
 	weight: '500',
 	style: ['normal'],
+}); */
+
+import { Plus_Jakarta_Sans } from 'next/font/google';
+const customFont = Plus_Jakarta_Sans({
+	subsets: ['latin'],
+	weight: '400',
+	style: ['normal'],
 });
+
+/* import { Signika_Negative } from 'next/font/google';
+const customFont = Signika_Negative({
+	subsets: ['latin'],
+	weight: '300',
+	style: ['normal'],
+}); */
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 	const { isDarkMode } = setDarkMode();

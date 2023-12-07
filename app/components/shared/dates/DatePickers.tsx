@@ -1,5 +1,5 @@
 // React core
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // External modules / Third-party libraries
 import DatePicker from 'react-datepicker';
 import addDays from 'date-fns/addDays';
@@ -52,6 +52,14 @@ export const DatePickers = ({
 		setDatesRange([null, null]);
 		field.onChange([null, null]);
 	};
+
+	// Reset form action
+	useEffect(() => {
+		if (field.value === undefined) {
+			console.log(field.value);
+			setDatesRange([null, null]);
+		}
+	}, [field.value]);
 
 	return (
 		<div className={`${styles.container}`}>

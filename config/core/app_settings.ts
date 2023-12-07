@@ -1,13 +1,24 @@
 //! SHARED CONSTANTE DO NOT DELETE
 
+const DEV = process.env.NODE_ENV !== 'production';
+
+let MASTER_LOGIN;
+
+if (DEV) {
+	console.log('Mode développement');
+	MASTER_LOGIN = {
+		email: 'master@gmail.com',
+		password: 'master',
+	};
+} else {
+	MASTER_LOGIN = undefined;
+}
+
 //* APP NAME
 export const APPLICATION_NAME = process.env.NEXT_PUBLIC_APPLICATION_NAME;
 
 //* AUTHENTICATION
-export const DEFAULT_USER = {
-	email: 'master@gmail.com',
-	password: 'master',
-};
+export const DEFAULT_USER = MASTER_LOGIN;
 
 export const DUMMY_USER_INFOS = {
 	id: 1,
@@ -30,7 +41,7 @@ export const APP_SETTINGS_PAGES = {
 export const PAGES_NAMES = [
 	{ folderName: 'page_1', givenName: 'page1' },
 	{ folderName: 'page_2', givenName: 'page2' },
-	{ folderName: 'sandBox', givenName: 'Tests' },
+	{ folderName: 'tests', givenName: 'Tests' },
 ];
 
 //* SIGN IN OPTIONS

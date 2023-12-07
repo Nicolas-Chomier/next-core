@@ -32,27 +32,27 @@ for (let i = 0; i < 8; i++) {
 //
 type TAddUserForm = {
 	largeList: any;
-	multiple: any;
-	basic: any;
+	/* multiple: any;
+	basic: any; */
+	dateRange: any;
 	/*email: any; */
 	/* dates: any;
 	startDate: any;
 	endDate: any; */
-	/* dateRange: any; */
 };
 
 export const TestSchema: ZodType<TAddUserForm> = z.object({
 	largeList: z.string().toLowerCase().trim().min(1),
-	/*dates: z.date(),*/
-	multiple: z.array(z.string()),
-	basic: z.string().toLowerCase().trim().min(1),
+	/* multiple: z.array(z.string()),
+	basic: z.string().toLowerCase().trim().min(1), */
+	dateRange: z.tuple([z.date(), z.date()]),
 	/*email: z.string().email().min(4, 'Email to short').max(90, 'Email to long'),
 
 	startDate: z.coerce
 		.date()
 		.min(MINIMUM_ALLOWED_DATE, { message: 'Too old' }),
 	endDate: z.coerce.date(),
-	dateRange: z.tuple([z.date(), z.date()]), */
+	 */
 });
 
 type TAddUserFormProps = {
@@ -75,7 +75,7 @@ const SandBox = () => {
 	const submitData = async (data: TAddUserForm) => {
 		//handlePost(data);
 		console.log(data);
-		//reset();
+		reset();
 	};
 
 	return (
@@ -98,7 +98,7 @@ const SandBox = () => {
 						)}
 					/>
 
-					<Controller
+					{/* 	<Controller
 						control={control}
 						name='multiple'
 						render={({ field }) => (
@@ -118,7 +118,7 @@ const SandBox = () => {
 								contentToDisplay={stringList}
 							></SelectBasic>
 						)}
-					/>
+					/> */}
 
 					{/*	<InputText
 						type='email'
@@ -130,14 +130,13 @@ const SandBox = () => {
 						errors={errors}
 					/> */}
 
-					{/* <Controller
+					<Controller
 						control={control}
 						name='dateRange'
 						render={({ field }) => <DatePickers field={field} />}
-					/> */}
+					/>
 
-					{/* <button>ddd</button> */}
-					<FormButton display={isValid} isLoading={false} />
+					<FormButton display={isValid} isLoading={isLoading} />
 				</Flex>
 			</form>
 		</>
