@@ -63,7 +63,7 @@
 }
 
 .button:hover {
-	box-shadow: inset 0 0 0 2px var(--gray-a9);
+	box-shadow: inset 0 0 0 2px var(--gray-a8);
 	background-color: var(--success-color);
 	color: whitesmoke;
 }

@@ -40,7 +40,7 @@ export const UserInfos = () => {
 					as={'p'}
 					size={'2'}
 					trim={'both'}
-					weight={'regular'}
+					weight={'bold'}
 					className={styles.animated_text}
 				>
 					{capitalizeFirstLetters(rank)}
