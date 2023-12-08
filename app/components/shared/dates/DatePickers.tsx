@@ -56,7 +56,6 @@ export const DatePickers = ({
 	// Reset form action
 	useEffect(() => {
 		if (field.value === undefined) {
-			console.log(field.value);
 			setDatesRange([null, null]);
 		}
 	}, [field.value]);

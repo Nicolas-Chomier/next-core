@@ -26,32 +26,35 @@ export const SelectLargeList = ({
 	placeHolder,
 }: TSelectLargeListProps) => {
 	// State and references for display and interaction management
-	const [deploy, setDeploy] = useState(false);
+	const [panelVisibility, setPanelVisibility] = useState(false);
 	const containerRef = useRef(null);
 
 	// Hook to manage clicks outside the component and close the drop-down menu
-	useOnClickOutside(containerRef, () => setDeploy(false));
+	useOnClickOutside(containerRef, () => setPanelVisibility(false));
 
 	// Functions for selecting items in the list
 	const handleSelect = (item: string) => {
 		field.onChange(item);
-		setDeploy(false);
+		setPanelVisibility(false);
 	};
 
 	// JSX
 	return (
 		<div className={styles.container} ref={containerRef}>
-			<div className={styles.trigger} onClick={() => setDeploy(!deploy)}>
+			<div
+				className={styles.trigger}
+				onClick={() => setPanelVisibility(!panelVisibility)}
+			>
 				<div className={styles.placeHolder}>
 					{padString(field.value) ||
 						placeHolder ||
 						capitalizeFirstLetters(field.name)}
 				</div>
 
-				<ExpandPanelSwitch toggle={deploy} />
+				<ExpandPanelSwitch toggle={panelVisibility} />
 			</div>
 
-			{deploy ? (
+			{panelVisibility ? (
 				<div className={` ${styles.large_list_wrapper}`}>
 					<LargeList
 						content={contentToDisplay}

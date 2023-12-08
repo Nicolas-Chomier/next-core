@@ -19,6 +19,7 @@ import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
 import { DatePickers } from '@/app/components/shared/dates/DatePickers';
 import { FormButton } from '@/app/components/shared/buttons/FormButton';
 import { PMap } from '@/app/components/shared/maps/PMap';
+import { SearchBar } from '@/app/components/shared/search/SearchBar';
 
 const dummyMap = [
 	{
@@ -53,16 +54,27 @@ const dummyMap = [
 	},
 ];
 
+const dummyDattaSearching = [
+	{ label: 'ABCd', address: 'add1', file: 'F01' },
+	{ label: 'ABCDEF', address: 'add2', file: 'F02' },
+	{ label: 'ABUU', address: 'add3', file: 'F03' },
+	{ label: 'CHE', address: 'add4', file: 'F04' },
+];
+
 // Générer 10 strings aléatoires
 let stringList: any = [];
 for (let i = 0; i < 100; i++) {
 	stringList.push(`${nanoid(15)}`);
 }
 
-/* let stringList2: any = [];
-for (let i = 0; i < 8; i++) {
-	stringList2.push(`${nanoid(9)}`);
-} */
+let elemList2: any = [];
+for (let i = 0; i < 80; i++) {
+	elemList2.push({
+		label: nanoid(6),
+		address: `add${i}`,
+		file: `FILE:0${i}`,
+	});
+}
 //
 type TAddUserForm = {
 	largeList: any;
@@ -114,6 +126,9 @@ const SandBox = () => {
 
 	const handleMarkerData = () => {
 		console.log('z');
+	};
+	const handleSearch = (e: any) => {
+		console.log('=====', e);
 	};
 
 	return (
@@ -175,11 +190,14 @@ const SandBox = () => {
 					/>
 
 					<FormButton display={isValid} isLoading={isLoading} />
-
-					<PMap
+					{/* <PMap
 						coordinates={dummyMap}
 						handleMapClick={handleMarkerData}
-					></PMap>
+					></PMap> */}
+					<SearchBar
+						data={elemList2}
+						onChange={handleSearch}
+					></SearchBar>
 				</Flex>
 			</form>
 		</>

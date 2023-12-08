@@ -29,12 +29,12 @@ export const SelectMultiple = ({
 	placeHolder,
 }: TSelectMultipleProps) => {
 	// State and references for display and interaction management
-	const [deploy, setDeploy] = useState(false);
+	const [panelVisibility, setPanelVisibility] = useState(false);
 	const listRef = useRef<string[]>([]);
 	const containerRef = useRef(null);
 
 	// Hook to manage clicks outside the component and close the drop-down menu
-	useOnClickOutside(containerRef, () => setDeploy(false));
+	useOnClickOutside(containerRef, () => setPanelVisibility(false));
 
 	// Functions for deleting, resetting and selecting items in the list
 	const handleDelete = (value: string) => {
@@ -43,14 +43,14 @@ export const SelectMultiple = ({
 	};
 	const handleReset = () => {
 		field.onChange(null), (listRef.current = []);
-		setDeploy(false);
+		setPanelVisibility(false);
 	};
 	const handleSelect = (item: string) => {
 		listRef.current.push(item);
 		field.onChange([...listRef.current]);
 	};
 	const handleExpand = () => {
-		setDeploy(!deploy);
+		setPanelVisibility(!panelVisibility);
 	};
 
 	// Effect to reset the list reference when modifying the field
@@ -67,17 +67,20 @@ export const SelectMultiple = ({
 				{!field.value || field.value.length === 0 ? (
 					<div
 						className={styles.placeHolder}
-						onClick={() => setDeploy(!deploy)}
+						onClick={() => setPanelVisibility(!panelVisibility)}
 					>
 						{placeHolder || capitalizeFirstLetters(field.name)}
 					</div>
 				) : null}
 				<BadgeDisplayer field={field} handleClick={handleDelete} />
 				<ResetButton field={field} handleClick={handleReset} />
-				<ExpandPanelSwitch toggle={deploy} handleClick={handleExpand} />
+				<ExpandPanelSwitch
+					toggle={panelVisibility}
+					handleClick={handleExpand}
+				/>
 			</div>
 
-			{deploy ? (
+			{panelVisibility ? (
 				<div className={` ${styles.large_list_wrapper}`}>
 					<LargeList
 						content={contentToDisplay}

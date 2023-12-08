@@ -7,7 +7,6 @@ import { Map, Marker } from 'pigeon-maps';
 // Hooks and utilities
 import useWindowSize from '@/app/hooks/useWindowSize';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
-import { useMousePosition } from '@/app/hooks/useMousePosition';
 // Configuration
 import {
 	HEX_STANDARD_COLOR_SUCCESS,

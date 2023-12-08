@@ -13,7 +13,7 @@ export const MINIMUM_ALLOWED_DATE = new Date('01/01/2022');
 
 //* PAGES
 export const PAGES_NAMES = [
-	{ folderName: 'trends', givenName: 'Example1' },
+	{ folderName: 'page_1', givenName: 'Example1' },
 	{ folderName: 'page_2', givenName: 'Example2' },
-	{ folderName: 'sandBox', givenName: 'Tests' },
+	{ folderName: 'tests', givenName: 'Tests' },
 ];

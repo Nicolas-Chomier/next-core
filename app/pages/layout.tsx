@@ -4,7 +4,7 @@ import React from 'react';
 // External modules / Third-party libraries
 // Local components
 import { NavigationBar } from '@/app/components/core/navigation/navigationBar/NavigationBar';
-import { Footer } from '@/app/components/core/footer/Footer';
+import { Footer } from '@/app/components/shared/layout/footer/Footer';
 // Hooks and utilities
 import { setDarkMode } from '../store/core/darkMode';
 // Configuration
