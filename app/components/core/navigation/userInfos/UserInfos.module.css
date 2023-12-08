@@ -26,8 +26,8 @@
 .animated_text {
 	background-image: linear-gradient(
 		to left,
-		rgb(250, 133, 37),
-		rgb(252, 97, 120)
+		rgb(255, 186, 37),
+		rgb(138, 97, 252)
 	);
 	background-size: auto auto;
 	background-clip: border-box;

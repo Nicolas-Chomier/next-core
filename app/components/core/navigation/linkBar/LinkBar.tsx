@@ -9,7 +9,8 @@ import { usePathname } from 'next/navigation';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import { LANDING_FOLDER_PATH, PAGES_NAMES } from '@/config/core/app_settings';
+import { LANDING_FOLDER_PATH } from '@/config/core/app_settings';
+import { PAGES_NAMES } from '@/config/project_settings';
 // Styles
 import styles from './LinkBar.module.css';
 
@@ -25,7 +26,7 @@ export const LinkBar = () => {
 		>
 			{PAGES_NAMES.map((page, index) => {
 				const path = LANDING_FOLDER_PATH + '/' + page.folderName;
-				const size = PAGES_NAMES.length - 1;
+
 				return (
 					<Link key={`p-${index}`} href={path}>
 						<div

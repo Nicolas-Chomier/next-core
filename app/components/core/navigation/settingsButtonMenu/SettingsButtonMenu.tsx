@@ -30,6 +30,7 @@ import {
 } from '@/config/constantes';
 // Styles
 import styles from './SettingsButtonMenu.module.css';
+import { usePathname } from 'next/navigation';
 
 export const MultiButtonFrame = () => {
 	const { isDarkMode } = setDarkMode();
@@ -119,18 +120,29 @@ const LogOutSwitch = () => {
 
 const HomeSwitch = () => {
 	const { isDarkMode } = setDarkMode();
+	const pathname = usePathname();
+	const pageName = pathname.split('/').at(-1);
+	const landingPageName = LANDING_FOLDER_PATH.split('/').at(-1);
+
 	return (
-		<Tooltip content={'Home page'}>
-			<Link href={LANDING_FOLDER_PATH}>
-				<button
-					className={`${isDarkMode ? 'dark-theme' : ''} ${
-						styles.switch_base
-					} ${styles.sub_switch}`}
-				>
-					<HomeIcon size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
-				</button>
-			</Link>
-		</Tooltip>
+		<>
+			<Tooltip content={'Home page'}>
+				<Link href={LANDING_FOLDER_PATH}>
+					<div
+						className={`${isDarkMode ? 'dark-theme' : ''} ${
+							styles.switch_base
+						} ${styles.sub_switch}`}
+					>
+						{pageName === landingPageName ? null : (
+							<HomeIcon
+								size={ICON_SIZE_M}
+								strokeWidth={ICON_STROKE_M}
+							/>
+						)}
+					</div>
+				</Link>
+			</Tooltip>
+		</>
 	);
 };
 

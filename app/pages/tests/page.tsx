@@ -18,6 +18,40 @@ import { SelectBasic } from '@/app/components/shared/selects/basic/SelectBasic';
 import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
 import { DatePickers } from '@/app/components/shared/dates/DatePickers';
 import { FormButton } from '@/app/components/shared/buttons/FormButton';
+import { PMap } from '@/app/components/shared/maps/PMap';
+
+const dummyMap = [
+	{
+		id: 0,
+		name: 'test',
+		lat: 49.88773,
+		lon: 2.291841,
+	},
+	{
+		id: 1,
+		name: 'test1',
+		lat: 48.880115,
+		lon: 2.329127,
+	},
+	{
+		id: 2,
+		name: 'test2',
+		lat: 48.873528,
+		lon: 2.33953,
+	},
+	{
+		id: 3,
+		name: undefined,
+		lat: 43.700495,
+		lon: 7.260509,
+	},
+	{
+		id: 4,
+		name: 'test4',
+		lat: 48.850017,
+		lon: 2.349436,
+	},
+];
 
 // Générer 10 strings aléatoires
 let stringList: any = [];
@@ -76,6 +110,10 @@ const SandBox = () => {
 		//handlePost(data);
 		console.log(data);
 		reset();
+	};
+
+	const handleMarkerData = () => {
+		console.log('z');
 	};
 
 	return (
@@ -137,6 +175,11 @@ const SandBox = () => {
 					/>
 
 					<FormButton display={isValid} isLoading={isLoading} />
+
+					<PMap
+						coordinates={dummyMap}
+						handleMapClick={handleMarkerData}
+					></PMap>
 				</Flex>
 			</form>
 		</>

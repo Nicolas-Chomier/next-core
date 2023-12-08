@@ -9,7 +9,8 @@ import { Menu, X } from 'lucide-react';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import { LANDING_FOLDER_PATH, PAGES_NAMES } from '@/config/core/app_settings';
+import { LANDING_FOLDER_PATH } from '@/config/core/app_settings';
+import { PAGES_NAMES } from '@/config/project_settings';
 import {
 	STANDARD_COLOR_DANGER,
 	ICON_SIZE_M,

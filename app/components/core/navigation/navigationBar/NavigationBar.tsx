@@ -9,7 +9,7 @@ import { LinkButton } from '@/app/components/core/navigation/linkButtonMenu/Link
 import { Title } from '@/app/components/core/navigation/title/Title';
 // Hooks and utilities
 import { setDarkMode } from '@/app/store/core/darkMode';
-import useMediaQuery from '@/app/hooks/core/useMediaQuery';
+import useMediaQuery from '@/app/hooks/useMediaQuery';
 // Configuration
 import {
 	MEDIAQUERY_BREAKPOINT_SMALL_LAPTOP,

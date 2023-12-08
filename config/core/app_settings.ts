@@ -37,13 +37,6 @@ export const APP_SETTINGS_PAGES = {
 	givenName: 'Admin_panel',
 };
 
-//* PAGES
-export const PAGES_NAMES = [
-	{ folderName: 'page_1', givenName: 'page1' },
-	{ folderName: 'page_2', givenName: 'page2' },
-	{ folderName: 'tests', givenName: 'Tests' },
-];
-
 //* SIGN IN OPTIONS
 export const DEFAULT_SIGN_OPTION: {
 	expiresIn?: string | number;

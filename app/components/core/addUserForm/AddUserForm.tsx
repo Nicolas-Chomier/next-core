@@ -1,26 +1,21 @@
 // React core
 import React from 'react';
 // External modules / Third-party libraries
-import { Button, Grid, Text } from '@radix-ui/themes';
+import { Grid, Text } from '@radix-ui/themes';
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 // Local components
 import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
 import { SelectBasic } from '@/app/components/shared/selects/basic/SelectBasic';
+import { FormButton } from '@/app/components/shared/buttons/FormButton';
 // Hooks and utilities
 import { Controller, useForm } from 'react-hook-form';
-import useMediaQuery from '@/app/hooks/core/useMediaQuery';
+import useMediaQuery from '@/app/hooks/useMediaQuery';
 // Configuration
-import {
-	STANDARD_COLOR_SUCCESS,
-	NATIVE_COMPONENT_VARIANT,
-	NATIVE_COMPONENT_RADIUS,
-	MEDIAQUERY_BREAKPOINT_SMARTPHONE,
-} from '@/config/constantes';
+import { MEDIAQUERY_BREAKPOINT_SMARTPHONE } from '@/config/constantes';
 import { USERS_CONFIG } from '@/config/core/app_settings';
 import { AddUserSchema } from '@/app/utils/schema/addUserForm';
 // Styles
 import styles from './AddUserForm.module.css';
-import { FormButton } from '../../shared/buttons/FormButton';
 
 type TAddUserFormProps = {
 	handlePost: (obj: TAddUserForm) => void;
@@ -36,7 +31,6 @@ type TAddUserForm = {
 export const AddUserForm = ({ handlePost }: TAddUserFormProps) => {
 	// Build ranking list for the input select component
 	const rankingList = Object.keys(USERS_CONFIG).splice(1, 4);
-	const selectDefaultValue = rankingList.at(-1);
 	const isSmartphoneSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_SMARTPHONE);
 
 	// Use form hook which manage the entire form

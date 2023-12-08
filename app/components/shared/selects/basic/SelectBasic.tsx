@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 // Local components
 // Hooks and utilities
-import { useOnClickOutside } from '@/app/hooks/core/useOnClickOutside';
+import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 import { setDarkMode } from '@/app/store/core/darkMode';
 // Configuration

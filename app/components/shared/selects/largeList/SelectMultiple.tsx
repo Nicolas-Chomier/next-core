@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, XCircle } from 'lucide-react';
 import { Virtuoso } from 'react-virtuoso';
 // Local components
 // Hooks and utilities
-import { useOnClickOutside } from '@/app/hooks/core/useOnClickOutside';
+import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration

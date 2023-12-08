@@ -27,6 +27,9 @@ export const NATIVE_COMPONENT_GRAYCOLOR = 'grey';
 export const STANDARD_COLOR_SUCCESS = 'grass';
 export const STANDARD_COLOR_WARNING = 'amber';
 export const STANDARD_COLOR_DANGER = 'tomato';
+export const HEX_STANDARD_COLOR_SUCCESS = '#46A758';
+export const HEX_STANDARD_COLOR_WARNING = '#FFBA18';
+export const HEX_STANDARD_COLOR_DANGER = '#E54D2E';
 
 //* LANGUAGE
 export const LANGUAGE = 'fr';
