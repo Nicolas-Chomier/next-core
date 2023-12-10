@@ -63,6 +63,6 @@
 }
 
 .button:hover {
-	background-color: var(--success-color);
+	background-color: #56ba9f;
 	color: whitesmoke;
 }

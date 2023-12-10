@@ -9,7 +9,7 @@ import { Menu, X } from 'lucide-react';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import { LANDING_FOLDER_PATH } from '@/config/core/app_settings';
+import { LANDING_PAGE } from '@/config/core/settings';
 import { PAGES_NAMES } from '@/config/project_settings';
 import {
 	STANDARD_COLOR_DANGER,
@@ -52,7 +52,7 @@ export const LinkButton = () => {
 				{PAGES_NAMES.map((page) => (
 					<div key={page.folderName} className={styles.button_shape}>
 						<Link
-							href={`${LANDING_FOLDER_PATH}/${page.folderName}`}
+							href={`${LANDING_PAGE}/${page.folderName}`}
 							className={`${isDarkMode ? 'dark-theme' : ''} ${
 								styles.link_button
 							}`}

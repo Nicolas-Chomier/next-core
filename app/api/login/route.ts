@@ -1,7 +1,7 @@
 import { signJwtAccessToken } from '@/app/utils/core/jwt';
 import prisma from '@/app/utils/core/prisma';
 import * as bcrypt from 'bcrypt';
-import { DUMMY_USER_INFOS } from '@/config/core/app_settings';
+import { DUMMY_USER_INFOS } from '@/config/core/authentication';
 
 interface RequestBody {
 	username: string;

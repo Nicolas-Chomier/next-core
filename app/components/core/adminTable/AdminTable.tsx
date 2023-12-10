@@ -5,7 +5,7 @@ import { Trash2, X } from 'lucide-react';
 // Local components
 // Hooks and utilities
 // Configuration
-import { USERS_CONFIG } from '@/config/core/app_settings';
+import { USERS_CONFIG } from '@/config/core/settings';
 import {
 	NATIVE_COMPONENT_PX_RADIUS,
 	ICON_SIZE_M,

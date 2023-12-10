@@ -2,7 +2,6 @@
 // React core
 import React, { useState } from 'react';
 // External modules / Third-party libraries
-import Link from 'next/link';
 import {
 	HomeIcon,
 	LogOut,
@@ -16,13 +15,10 @@ import { Tooltip } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
 import { signOut, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import { setDarkMode } from '@/app/store/core/darkMode';
 // Configuration
-import {
-	LANDING_FOLDER_PATH,
-	APP_SETTINGS_PAGES,
-	DEFAULT_RANK,
-} from '@/config/core/app_settings';
+import { ACCOUNT_MANAGEMENT_PAGE, LANDING_PAGE } from '@/config/core/settings';
 import {
 	STANDARD_COLOR_DANGER,
 	ICON_SIZE_M,
@@ -30,13 +26,22 @@ import {
 } from '@/config/constantes';
 // Styles
 import styles from './SettingsButtonMenu.module.css';
-import { usePathname } from 'next/navigation';
 
 export const MultiButtonFrame = () => {
-	const { isDarkMode } = setDarkMode();
-	const [showMenu, setShowMenu] = useState(false);
-	const { data: session } = useSession();
-	const rank = session?.user?.rank;
+	// Setup
+	const router = useRouter();
+	const { isDarkMode, toggleDarkMode } = setDarkMode();
+	const [isMenuVisible, setMenuVisibility] = useState(false);
+
+	const darkModeIcon = () => {
+		return isDarkMode ? (
+			<Sun size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
+		) : (
+			<Moon size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
+		);
+	};
+
+	const tooltipMessage = isDarkMode ? 'Light Mode' : 'Dark Mode';
 
 	return (
 		<div className={styles.multiButtonFrame}>
@@ -44,9 +49,9 @@ export const MultiButtonFrame = () => {
 				className={`${isDarkMode ? 'dark-theme' : ''} ${
 					styles.switch_base
 				} ${styles.toggle_switch}`}
-				onClick={() => setShowMenu(!showMenu)}
+				onClick={() => setMenuVisibility(!isMenuVisible)}
 			>
-				{showMenu ? (
+				{isMenuVisible ? (
 					<X
 						size={ICON_SIZE_M}
 						strokeWidth={ICON_STROKE_M}
@@ -58,114 +63,87 @@ export const MultiButtonFrame = () => {
 			</button>
 			<div
 				className={`${
-					showMenu ? styles.showButton : styles.hiddenButton
+					isMenuVisible ? styles.showButton : styles.hiddenButton
 				}`}
 			>
 				<div className={styles.button1}>
-					<HomeSwitch />
+					<SettingSubSwitch
+						handleClick={() => {
+							toggleDarkMode(), setMenuVisibility(false);
+						}}
+						toolTip={tooltipMessage}
+					>
+						{darkModeIcon()}
+					</SettingSubSwitch>
 				</div>
+
 				<div className={styles.button2}>
-					<DarkModeSwitch />
+					<SettingSubSwitch
+						handleClick={() => signOut({ callbackUrl: '/' })}
+						toolTip={'Paramètres'}
+					>
+						<LogOut
+							size={ICON_SIZE_M}
+							strokeWidth={ICON_STROKE_M}
+						/>
+					</SettingSubSwitch>
 				</div>
+
 				<div className={styles.button3}>
-					<LogOutSwitch />
+					<SettingSubSwitch
+						handleClick={() => {
+							router.push(LANDING_PAGE), setMenuVisibility(false);
+						}}
+						toolTip={'Paramètres'}
+					>
+						<HomeIcon
+							size={ICON_SIZE_M}
+							strokeWidth={ICON_STROKE_M}
+						/>
+					</SettingSubSwitch>
 				</div>
-				{rank !== DEFAULT_RANK ? (
-					<div className={styles.button4}>
-						<SettingsSwitch rank={rank} />
-					</div>
-				) : null}
+
+				<div className={styles.button4}>
+					<SettingSubSwitch
+						handleClick={() => {
+							router.push(ACCOUNT_MANAGEMENT_PAGE),
+								setMenuVisibility(false);
+						}}
+						toolTip={'Paramètres'}
+					>
+						<Settings
+							size={ICON_SIZE_M}
+							strokeWidth={ICON_STROKE_M}
+						/>
+					</SettingSubSwitch>
+				</div>
 			</div>
 		</div>
 	);
 };
 
-const DarkModeSwitch = () => {
-	const { isDarkMode, toggleDarkMode } = setDarkMode();
-	const tooltipMessage = isDarkMode ? 'Light Mode' : 'Dark Mode';
+type TSettingSubSwitchProps = {
+	handleClick: () => void;
+	toolTip?: string | undefined;
+	children: React.ReactNode;
+};
+const SettingSubSwitch = ({
+	handleClick,
+	toolTip,
+	children,
+}: TSettingSubSwitchProps) => {
+	const { isDarkMode } = setDarkMode();
 
 	return (
-		<Tooltip content={tooltipMessage}>
+		<Tooltip content={toolTip || '...'}>
 			<button
-				onClick={toggleDarkMode}
+				onClick={handleClick}
 				className={`${isDarkMode ? 'dark-theme' : ''} ${
 					styles.switch_base
 				} ${styles.sub_switch}`}
 			>
-				{isDarkMode ? (
-					<Sun size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
-				) : (
-					<Moon size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
-				)}
+				{children}
 			</button>
-		</Tooltip>
-	);
-};
-
-const LogOutSwitch = () => {
-	const { isDarkMode } = setDarkMode();
-	return (
-		<Tooltip content={'Log Out'}>
-			<button
-				className={`${isDarkMode ? 'dark-theme' : ''} ${
-					styles.switch_base
-				} ${styles.sub_switch}`}
-				onClick={() => signOut({ callbackUrl: '/' })}
-			>
-				<LogOut size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
-			</button>
-		</Tooltip>
-	);
-};
-
-const HomeSwitch = () => {
-	const { isDarkMode } = setDarkMode();
-	const pathname = usePathname();
-	const pageName = pathname.split('/').at(-1);
-	const landingPageName = LANDING_FOLDER_PATH.split('/').at(-1);
-
-	return (
-		<>
-			<Tooltip content={'Home page'}>
-				<Link href={LANDING_FOLDER_PATH}>
-					<div
-						className={`${isDarkMode ? 'dark-theme' : ''} ${
-							styles.switch_base
-						} ${styles.sub_switch}`}
-					>
-						{pageName === landingPageName ? null : (
-							<HomeIcon
-								size={ICON_SIZE_M}
-								strokeWidth={ICON_STROKE_M}
-							/>
-						)}
-					</div>
-				</Link>
-			</Tooltip>
-		</>
-	);
-};
-
-type TSettingsSwitchProps = {
-	rank: string | null;
-};
-
-const SettingsSwitch = ({ rank }: TSettingsSwitchProps) => {
-	const { isDarkMode } = setDarkMode();
-	const appSettingPath =
-		LANDING_FOLDER_PATH + '/' + APP_SETTINGS_PAGES.folderName + '/' + rank;
-
-	return (
-		<Tooltip content={'Settings'}>
-			<Link href={appSettingPath}>
-				<button
-					className={`${isDarkMode ? 'dark-theme' : ''} ${
-						styles.switch_base
-					} ${styles.sub_switch}`}
-				>
-					<Settings size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
-				</button>
-			</Link>
 		</Tooltip>
 	);
 };

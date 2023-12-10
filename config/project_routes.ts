@@ -1,3 +1,3 @@
-import { URL } from '@/config/core/app_routes';
+import { URL } from '@/config/core/apiRoutes';
 
 //* XYZ END POINTS

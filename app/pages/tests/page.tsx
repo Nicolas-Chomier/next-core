@@ -66,15 +66,6 @@ let stringList: any = [];
 for (let i = 0; i < 100; i++) {
 	stringList.push(`${nanoid(15)}`);
 }
-
-let elemList2: any = [];
-for (let i = 0; i < 80; i++) {
-	elemList2.push({
-		label: nanoid(6),
-		address: `add${i}`,
-		file: `FILE:0${i}`,
-	});
-}
 //
 type TAddUserForm = {
 	largeList: any;
@@ -195,7 +186,7 @@ const SandBox = () => {
 						handleMapClick={handleMarkerData}
 					></PMap> */}
 					<SearchBar
-						data={elemList2}
+						data={stringList}
 						onChange={handleSearch}
 					></SearchBar>
 				</Flex>

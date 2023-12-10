@@ -10,7 +10,8 @@ import { LoadingSpinner } from '@/app/components/shared/layout/loadingSpinner/Lo
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 import { useForm } from 'react-hook-form';
 // Configuration
-import { DEFAULT_USER, LANDING_FOLDER_PATH } from '@/config/core/app_settings';
+import { LANDING_PAGE } from '@/config/core/settings';
+import { DEFAULT_USER } from '@/config/core/authentication';
 import { SignInFormSchema, TSignInForm } from '@/app/utils/schema/signInForm';
 // Styles
 import styles from '@/app/styles/rootPage.module.css';
@@ -33,7 +34,7 @@ const RootPage = () => {
 			username: data.email,
 			password: data.password,
 			redirect: true,
-			callbackUrl: LANDING_FOLDER_PATH,
+			callbackUrl: LANDING_PAGE,
 		});
 		reset();
 	};

@@ -8,10 +8,7 @@ import { Text } from '@radix-ui/themes';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import {
-	APPLICATION_NAME,
-	LANDING_FOLDER_PATH,
-} from '@/config/core/app_settings';
+import { APPLICATION_NAME, LANDING_PAGE } from '@/config/core/settings';
 // Styles
 import styles from './Title.module.css';
 
@@ -19,7 +16,7 @@ export const Title = () => {
 	const { isDarkMode } = setDarkMode();
 
 	return (
-		<Link href={LANDING_FOLDER_PATH}>
+		<Link href={LANDING_PAGE}>
 			<Text
 				as='p'
 				className={`${isDarkMode ? 'dark-theme' : ''} ${styles.title}`}

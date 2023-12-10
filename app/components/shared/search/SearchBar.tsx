@@ -11,15 +11,9 @@ import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './SearchBar.module.css';
 
-// Type definition for objects that have a label and any number of additional properties
-type TSearchableObject = {
-	label: string;
-	[key: string]: any;
-};
-
 // Props type for SearchBar component
 type TSearchBarProps = {
-	data: TSearchableObject[];
+	data: string[];
 	onChange: (value: string) => void;
 };
 
@@ -41,9 +35,9 @@ export const SearchBar = ({ data, onChange }: TSearchBarProps) => {
 	};
 
 	// Event handler for selecting an item from the dropdown
-	const handleItemClick = (item: TSearchableObject) => {
-		onChange(item.label);
-		setSearchValue(item.label);
+	const handleItemClick = (item: string) => {
+		onChange(item);
+		setSearchValue(item);
 		setPanelVisibility(false);
 	};
 
@@ -56,8 +50,8 @@ export const SearchBar = ({ data, onChange }: TSearchBarProps) => {
 	// Filtering the data based on the search input
 	const filteredData = useMemo(
 		() =>
-			data.filter((item) =>
-				item.label.toLowerCase().includes(searchValue.toLowerCase()),
+			data.filter((item: string) =>
+				item.toLowerCase().includes(searchValue.toLowerCase()),
 			),
 		[data, searchValue],
 	);
@@ -102,10 +96,10 @@ export const SearchBar = ({ data, onChange }: TSearchBarProps) => {
 						{filteredData.map((item) => (
 							<li
 								onClick={() => handleItemClick(item)}
-								key={item.label}
+								key={item}
 								className={styles.items}
 							>
-								{item.label}
+								{item}
 							</li>
 						))}
 					</ul>

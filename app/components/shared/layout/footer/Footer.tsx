@@ -17,6 +17,7 @@ import styles from './Footer.module.css';
 export const Footer = () => {
 	const pathname = usePathname();
 	const pageName = pathname.split('/').at(-1);
+
 	return (
 		<Badge
 			radius={NATIVE_COMPONENT_RADIUS}

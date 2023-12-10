@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
-import { LANDING_FOLDER_PATH } from '@/config/core/app_settings';
+import { LANDING_PAGE } from '@/config/core/settings';
 import { PAGES_NAMES } from '@/config/project_settings';
 // Styles
 import styles from './LinkBar.module.css';
@@ -25,7 +25,7 @@ export const LinkBar = () => {
 			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container}`}
 		>
 			{PAGES_NAMES.map((page, index) => {
-				const path = LANDING_FOLDER_PATH + '/' + page.folderName;
+				const path = LANDING_PAGE + '/' + page.folderName;
 
 				return (
 					<Link key={`p-${index}`} href={path}>
