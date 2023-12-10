@@ -15,7 +15,7 @@ import {
 	ICON_STROKE_M,
 	STANDARD_COLOR_DANGER,
 } from '@/config/constantes';
-import { MINIMUM_ALLOWED_DATE } from '@/config/project_settings';
+import { MINIMUM_ALLOWED_DATE } from '@/config/projectSettings';
 // Styles
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './DatePickers.module.css';

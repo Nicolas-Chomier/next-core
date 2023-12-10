@@ -10,7 +10,7 @@ import { setDarkMode } from '@/app/store/core/darkMode';
 import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
 // Configuration
 import { LANDING_PAGE } from '@/config/core/settings';
-import { PAGES_NAMES } from '@/config/project_settings';
+import { PAGES_NAMES } from '@/config/projectPages';
 import {
 	STANDARD_COLOR_DANGER,
 	ICON_SIZE_M,

@@ -3,8 +3,7 @@
 import React from 'react';
 // External modules / Third-party libraries
 // Local components
-// import { NavigationBar } from '@/app/components/core/navigation/navigationBar/NavigationBar';
-import { SideBar } from '@/app/components/core/sideBar/SideBar';
+import { NavigationBar } from '@/app/components/core/navigation/navigationBar/NavigationBar';
 import { Footer } from '@/app/components/shared/layout/footer/Footer';
 // Hooks and utilities
 import { setDarkMode } from '../store/core/darkMode';
@@ -43,8 +42,8 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 				isDarkMode ? 'dark_background' : 'light_background'
 			} ${customFont.className}`}
 		>
-			{/* <NavigationBar /> */}
-			<SideBar></SideBar>
+			<NavigationBar />
+
 			<div>{children}</div>
 			<Footer />
 		</main>
