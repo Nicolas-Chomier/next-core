@@ -1,7 +1,8 @@
 //! DO NOT DELETE !
 
 //* APP NAME (Displayed on navigation bar)
-export const APPLICATION_NAME = process.env.NEXT_PUBLIC_APPLICATION_NAME;
+export const AUTHENTICATION_PAGE_TITLE = process.env.NEXT_PUBLIC_TITLE;
+export const NAVIGATION_BAR_TITLE = process.env.NEXT_PUBLIC_NAV_NAME;
 
 //* PATH FOR NATIVE PAGE
 export const LANDING_PAGE = '/pages';

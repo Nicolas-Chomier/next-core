@@ -10,7 +10,10 @@ import { LoadingSpinner } from '@/app/components/shared/layout/loadingSpinner/Lo
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 import { useForm } from 'react-hook-form';
 // Configuration
-import { LANDING_PAGE } from '@/config/core/settings';
+import {
+	AUTHENTICATION_PAGE_TITLE,
+	LANDING_PAGE,
+} from '@/config/core/settings';
 import { DEFAULT_USER } from '@/config/core/authentication';
 import { SignInFormSchema, TSignInForm } from '@/app/utils/schema/signInForm';
 // Styles
@@ -44,7 +47,7 @@ const RootPage = () => {
 			<form onSubmit={handleSubmit(submitData)} className={styles.form}>
 				<div className={styles.title_wrapper}>
 					<ShieldCheck color='whitesmoke' size={'32'} />
-					<p className={styles.title}>Bienvenue</p>
+					<p className={styles.title}>{AUTHENTICATION_PAGE_TITLE}</p>
 				</div>
 				<InputText
 					type='email'
