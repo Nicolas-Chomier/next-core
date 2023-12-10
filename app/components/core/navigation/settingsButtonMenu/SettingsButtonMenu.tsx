@@ -14,7 +14,7 @@ import {
 import { Tooltip } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
-import { signOut, useSession } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { setDarkMode } from '@/app/store/core/darkMode';
 // Configuration
