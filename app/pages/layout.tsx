@@ -43,7 +43,6 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 			} ${customFont.className}`}
 		>
 			<NavigationBar />
-
 			<div>{children}</div>
 			<Footer />
 		</main>

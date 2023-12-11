@@ -9,6 +9,7 @@ import { Flex } from '@radix-ui/themes';
 import { DatePickers } from '@/app/components/shared/dates/DatePickers';
 import { FormButton } from '@/app/components/shared/buttons/FormButton';
 import { SearchBar } from '@/app/components/shared/search/SearchBar';
+import { Header } from '@/app/components/shared/layout/header/Header';
 
 // Générer 10 strings aléatoires
 let stringList: any = [];
