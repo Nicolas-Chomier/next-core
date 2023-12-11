@@ -7,8 +7,8 @@ import subDays from 'date-fns/subDays';
 import { X } from 'lucide-react';
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/core/darkMode';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { setDarkMode } from '@/app/store/darkMode';
+import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import {
 	ICON_SIZE_M,
@@ -70,9 +70,7 @@ export const DatePickers = ({
 				minDate={subDays(minDate || MINIMUM_ALLOWED_DATE, 0)}
 				maxDate={addDays(new Date(), 1)}
 				/* selected={minDate || MINIMUM_ALLOWED_DATE} */
-				placeholderText={
-					capitalizeFirstLetters(field.name) || placeHolder
-				}
+				placeholderText={capitalize(field.name) || placeHolder}
 				onChange={(update: [Date | null, Date | null]) => {
 					setDatesRange(update), handleChange(update);
 				}}

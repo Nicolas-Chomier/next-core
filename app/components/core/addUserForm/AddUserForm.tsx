@@ -13,7 +13,7 @@ import useMediaQuery from '@/app/hooks/useMediaQuery';
 // Configuration
 import { MEDIAQUERY_BREAKPOINT_SMARTPHONE } from '@/config/constantes';
 import { USERS_CONFIG } from '@/config/core/settings';
-import { AddUserSchema } from '@/app/utils/schema/addUserForm';
+import { AddUserSchema } from '@/app/schema/addUserForm';
 // Styles
 import styles from './AddUserForm.module.css';
 

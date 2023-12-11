@@ -5,14 +5,14 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Virtuoso } from 'react-virtuoso';
 // Local components
 // Hooks and utilities
+import { padString } from '@/app/functions/padString';
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
-import { setDarkMode } from '@/app/store/core/darkMode';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { setDarkMode } from '@/app/store/darkMode';
+import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
 import styles from './LargeListSelect.module.css';
-import { padString } from '@/app/utils/core/padString';
 
 type TSelectLargeListProps = {
 	field: { name: string; value: string; onChange: (value: string) => void };
@@ -48,7 +48,7 @@ export const SelectLargeList = ({
 				<div className={styles.placeHolder}>
 					{padString(field.value) ||
 						placeHolder ||
-						capitalizeFirstLetters(field.name)}
+						capitalize(field.name)}
 				</div>
 
 				<ExpandPanelSwitch toggle={panelVisibility} />

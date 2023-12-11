@@ -6,7 +6,7 @@ import React from 'react';
 import { NavigationBar } from '@/app/components/core/navigation/navigationBar/NavigationBar';
 import { Footer } from '@/app/components/shared/layout/footer/Footer';
 // Hooks and utilities
-import { setDarkMode } from '../store/core/darkMode';
+import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 // Styles
 import '@/app/styles/backGround.css';

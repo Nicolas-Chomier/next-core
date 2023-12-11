@@ -15,7 +15,7 @@ import {
 	LANDING_PAGE,
 } from '@/config/core/settings';
 import { DEFAULT_USER } from '@/config/core/authentication';
-import { SignInFormSchema, TSignInForm } from '@/app/utils/schema/signInForm';
+import { SignInFormSchema, TSignInForm } from '@/app/schema/signInForm';
 // Styles
 import styles from '@/app/styles/rootPage.module.css';
 

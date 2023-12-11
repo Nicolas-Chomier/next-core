@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import { AddUserSchema } from '@/app/utils/schema/addUserForm';
-import prisma from '@/app/utils/core/prisma';
+import { AddUserSchema } from '@/app/schema/addUserForm';
+import prisma from '@/app/functions/prisma';
 import * as bcrypt from 'bcrypt';
-import { verifyAccessToken } from '@/app/utils/core/verifyAccessToken';
+import { verifyAccessToken } from '@/app/functions/verifyAccessToken';
 
 type TAddUserForm = {
 	email: string;

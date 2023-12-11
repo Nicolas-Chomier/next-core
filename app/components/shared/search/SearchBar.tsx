@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, Search } from 'lucide-react';
 // Local components
 // Hooks and utilities
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
-import { setDarkMode } from '@/app/store/core/darkMode';
+import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles

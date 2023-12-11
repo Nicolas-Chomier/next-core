@@ -6,7 +6,7 @@ import { Map, Marker } from 'pigeon-maps';
 // Local components
 // Hooks and utilities
 import useWindowSize from '@/app/hooks/useWindowSize';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import {
 	HEX_STANDARD_COLOR_SUCCESS,
@@ -51,9 +51,7 @@ export const PMap = ({
 
 	return (
 		<div className={styles.container}>
-			<div className={styles.header}>
-				{capitalizeFirstLetters(mapTitle) || title}
-			</div>
+			<div className={styles.header}>{capitalize(mapTitle) || title}</div>
 			<div className={styles.map}>
 				<Map
 					defaultCenter={Paris}

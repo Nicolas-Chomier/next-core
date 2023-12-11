@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { Text } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/core/darkMode';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { setDarkMode } from '@/app/store/darkMode';
+import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import { NAVIGATION_BAR_TITLE, LANDING_PAGE } from '@/config/core/settings';
 // Styles
@@ -21,7 +21,7 @@ export const Title = () => {
 				as='p'
 				className={`${isDarkMode ? 'dark-theme' : ''} ${styles.title}`}
 			>
-				{capitalizeFirstLetters(NAVIGATION_BAR_TITLE) || ''}
+				{capitalize(NAVIGATION_BAR_TITLE) || ''}
 			</Text>
 		</Link>
 	);

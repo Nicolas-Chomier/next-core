@@ -5,8 +5,8 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 // Local components
 // Hooks and utilities
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
-import { setDarkMode } from '@/app/store/core/darkMode';
+import { capitalize } from '@/app/functions/capitalize';
+import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
@@ -55,7 +55,7 @@ export const SelectBasic = ({
 				defaultValue={'DEFAULT'}
 			>
 				<option value='DEFAULT' disabled className={styles.placeHolder}>
-					{capitalizeFirstLetters(field.name) || placeHolder}
+					{capitalize(field.name) || placeHolder}
 				</option>
 
 				{controledContent.map((row, index) => (

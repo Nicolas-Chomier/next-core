@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/app/utils/core/prisma';
-import { verifyJwt } from '@/app/utils/core/jwt';
+import prisma from '@/app/functions/prisma';
+import { verifyJwt } from '@/app/functions/jwt';
 
 export async function DELETE(request: Request) {
 	// Verification du token

@@ -6,8 +6,8 @@ import { Virtuoso } from 'react-virtuoso';
 // Local components
 // Hooks and utilities
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
-import { setDarkMode } from '@/app/store/core/darkMode';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { setDarkMode } from '@/app/store/darkMode';
+import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import {
 	ICON_SIZE_M,
@@ -69,7 +69,7 @@ export const SelectMultiple = ({
 						className={styles.placeHolder}
 						onClick={() => setPanelVisibility(!panelVisibility)}
 					>
-						{placeHolder || capitalizeFirstLetters(field.name)}
+						{placeHolder || capitalize(field.name)}
 					</div>
 				) : null}
 				<BadgeDisplayer field={field} handleClick={handleDelete} />
@@ -114,7 +114,7 @@ const BadgeDisplayer = ({ field, handleClick }: TBadgeDisplayerProps) => {
 						styles.badge
 					}`}
 				>
-					{capitalizeFirstLetters(item.substring(0, 4) + '...')}
+					{capitalize(item.substring(0, 4) + '...')}
 				</span>
 			))}
 		</div>

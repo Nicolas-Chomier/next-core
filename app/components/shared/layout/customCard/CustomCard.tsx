@@ -3,7 +3,7 @@ import React from 'react';
 // External modules / Third-party libraries
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/core/darkMode';
+import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 import { NATIVE_COMPONENT_PX_RADIUS } from '@/config/constantes';
 // Styles

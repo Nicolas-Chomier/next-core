@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/core/darkMode';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { setDarkMode } from '@/app/store/darkMode';
+import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import { LANDING_PAGE } from '@/config/core/settings';
 import { PAGES_NAMES } from '@/config/projectPages';
@@ -37,7 +37,7 @@ export const LinkBar = () => {
 							} ${styles.items}`}
 						>
 							<p className={styles.text}>
-								{capitalizeFirstLetters(page.givenName)}
+								{capitalize(page.givenName)}
 							</p>
 						</div>
 					</Link>

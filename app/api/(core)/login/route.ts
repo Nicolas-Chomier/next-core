@@ -1,5 +1,5 @@
-import { signJwtAccessToken } from '@/app/utils/core/jwt';
-import prisma from '@/app/utils/core/prisma';
+import { signJwtAccessToken } from '@/app/functions/jwt';
+import prisma from '@/app/functions/prisma';
 import * as bcrypt from 'bcrypt';
 import { DUMMY_USER_INFOS } from '@/config/core/authentication';
 

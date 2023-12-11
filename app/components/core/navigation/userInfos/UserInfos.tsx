@@ -6,8 +6,8 @@ import { Avatar, Text } from '@radix-ui/themes';
 import { LoadingSpinner } from '@/app/components/shared/layout/loadingSpinner/LoadingSpinner';
 // Hooks and utilities
 import { useSession } from 'next-auth/react';
-import { setDarkMode } from '@/app/store/core/darkMode';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { setDarkMode } from '@/app/store/darkMode';
+import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 // Styles
 import styles from './UserInfos.module.css';
@@ -34,7 +34,7 @@ export const UserInfos = () => {
 			/>
 			<div className={styles.text_wrapper}>
 				<Text as={'p'} size={'3'} trim={'both'} weight={'regular'}>
-					{capitalizeFirstLetters(name)}
+					{capitalize(name)}
 				</Text>
 				<Text
 					as={'p'}
@@ -43,7 +43,7 @@ export const UserInfos = () => {
 					weight={'bold'}
 					className={styles.animated_text}
 				>
-					{capitalizeFirstLetters(rank)}
+					{capitalize(rank)}
 				</Text>
 			</div>
 		</div>

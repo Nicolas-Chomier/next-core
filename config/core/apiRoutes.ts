@@ -2,7 +2,6 @@
 
 //* SETTINGS BASE URL
 const DEV = process.env.NODE_ENV !== 'production';
-
 let API_BASE_URL;
 
 if (DEV) {

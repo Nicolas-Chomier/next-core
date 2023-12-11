@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import { ChangePasswordSchema } from '@/app/utils/schema/changePasswordForm';
-import prisma from '@/app/utils/core/prisma';
+import { ChangePasswordSchema } from '@/app/schema/changePasswordForm';
+import prisma from '@/app/functions/prisma';
 import * as bcrypt from 'bcrypt';
-import { verifyAccessToken } from '@/app/utils/core/verifyAccessToken';
+import { verifyAccessToken } from '@/app/functions/verifyAccessToken';
 
 type TNewPasswordForm = {
 	newDraft: { password: string; confirm_password: string };

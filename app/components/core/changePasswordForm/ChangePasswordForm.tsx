@@ -7,7 +7,7 @@ import { InputText } from '@/app/components/shared/inputs/inputText/InputText';
 // Hooks and utilities
 import { useForm } from 'react-hook-form';
 import { Box, Button, Flex } from '@radix-ui/themes';
-import { ChangePasswordSchema } from '@/app/utils/schema/changePasswordForm';
+import { ChangePasswordSchema } from '@/app/schema/changePasswordForm';
 // Configuration
 import {
 	STANDARD_COLOR_SUCCESS,

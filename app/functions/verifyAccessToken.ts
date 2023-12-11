@@ -1,4 +1,4 @@
-import { verifyJwt } from '@/app/utils/core/jwt';
+import { verifyJwt } from '@/app/functions/jwt';
 
 export function verifyAccessToken(request: Request) {
 	const header = request.headers.get('authorization');

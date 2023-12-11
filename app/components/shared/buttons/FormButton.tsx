@@ -3,7 +3,7 @@ import React from 'react';
 // External modules / Third-party libraries
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/core/darkMode';
+import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 // Styles
 import styles from './FormButton.module.css';

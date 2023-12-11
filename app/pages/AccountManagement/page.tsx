@@ -13,7 +13,7 @@ import { ChangePasswordForm } from '@/app/components/core/changePasswordForm/Cha
 // Hooks and utilities
 import { useSession } from 'next-auth/react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { capitalizeFirstLetters } from '@/app/utils/core/capitalizeFirstLetters';
+import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import { API_ROUTES } from '@/config/core/apiRoutes';
 import {
@@ -207,7 +207,7 @@ const AccountManagement = () => {
 			<div className={styles.admin_table_wrapper}>
 				<div className={styles.admin_table_heading}>
 					{actionMessage && <Info className={styles.icon} />}
-					{capitalizeFirstLetters(actionMessage)}
+					{capitalize(actionMessage)}
 				</div>
 				{USERS_CONFIG[USERRANK].administrator &&
 					DisplayUserTable(handleDelete)}

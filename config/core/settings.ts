@@ -1,6 +1,6 @@
 //! DO NOT DELETE !
 
-//* APP NAME (Displayed on navigation bar)
+//* APP LABELS
 export const AUTHENTICATION_PAGE_TITLE = process.env.NEXT_PUBLIC_TITLE;
 export const NAVIGATION_BAR_TITLE = process.env.NEXT_PUBLIC_NAV_NAME;
 

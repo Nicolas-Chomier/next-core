@@ -3,7 +3,7 @@
 import { Theme } from '@radix-ui/themes';
 import { AuthProvider } from '@/app/components/core/provider/AuthProvider';
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/core/darkMode';
+import { setDarkMode } from '@/app/store/darkMode';
 import QueryProvider from './components/core/provider/QueryProvider';
 // Configuration
 import {

@@ -1,17 +1,12 @@
 // React core
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 // External modules / Third-party libraries
-import { Box, Card, Flex, Grid } from '@radix-ui/themes';
 // Local components
 // Hooks and utilities
-import { useSession } from 'next-auth/react';
-import { useQuery } from '@tanstack/react-query';
 // Configuration
-import styles from './Dashboard.module.css';
+import styles from './LandingPage.module.css';
 
-type TLandingPagesProps = {};
-
-const LandingPage = ({}: TLandingPagesProps) => {
+const LandingPage = () => {
 	return <></>;
 };
 export default LandingPage;
