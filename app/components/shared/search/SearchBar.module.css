@@ -15,19 +15,24 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	gap: 3px;
 }
 .searchIcon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	width: 37px;
+	height: 37px;
+	border-radius: 100%;
+	background-color: var(--accent-color);
 }
 .input {
-	width: 134px;
+	margin-left: 2px;
+	width: 153px;
 	background-color: transparent;
 	text-align: center;
-	height: 80%;
+	height: 100%;
+	border-radius: 20px 0 0 20px;
 }
 .switch {
 	display: flex;

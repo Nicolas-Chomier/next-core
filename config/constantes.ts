@@ -41,5 +41,5 @@ export const ICON_SIZE_L = '26';
 export const ICON_SIZE_XL = '32';
 export const ICON_STROKE_S = '1.2';
 export const ICON_STROKE_M = '1.6';
-export const ICON_STROKE_L = '3';
+export const ICON_STROKE_L = '2';
 export const ICON_STROKE_XL = '5';

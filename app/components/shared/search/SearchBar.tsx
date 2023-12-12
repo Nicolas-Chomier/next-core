@@ -1,23 +1,24 @@
 // React core
 import React, { useState, useMemo, useRef } from 'react';
 // External modules / Third-party libraries
-import { ChevronDown, ChevronUp, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 // Local components
 // Hooks and utilities
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
 import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
-import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
+import { ICON_SIZE_M, ICON_STROKE_L } from '@/config/constantes';
 // Styles
 import styles from './SearchBar.module.css';
 
 // Props type for SearchBar component
 type TSearchBarProps = {
 	data: string[];
+	placeHolder?: string;
 	onChange: (value: string) => void;
 };
 
-export const SearchBar = ({ data, onChange }: TSearchBarProps) => {
+export const SearchBar = ({ data, placeHolder, onChange }: TSearchBarProps) => {
 	const { isDarkMode } = setDarkMode();
 	const containerRef = useRef(null);
 	// Hook to manage clicks outside the component and close the drop-down menu
@@ -27,7 +28,7 @@ export const SearchBar = ({ data, onChange }: TSearchBarProps) => {
 	const [isPanelVisible, setPanelVisibility] = useState(false);
 
 	// State for the current value of the search input
-	const [searchValue, setSearchValue] = useState('');
+	const [searchValue, setSearchValue] = useState<string>('');
 
 	// Event handler for changes in the search input
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,15 +37,17 @@ export const SearchBar = ({ data, onChange }: TSearchBarProps) => {
 
 	// Event handler for selecting an item from the dropdown
 	const handleItemClick = (item: string) => {
-		onChange(item);
 		setSearchValue(item);
 		setPanelVisibility(false);
 	};
 
-	// Reset input value
-	const handleReset = () => {
-		setSearchValue('');
-		setPanelVisibility(!isPanelVisible);
+	// Send input value
+	const handleClick = () => {
+		setPanelVisibility(false);
+		if (searchValue) {
+			onChange(searchValue);
+			setSearchValue('');
+		}
 	};
 
 	// Filtering the data based on the search input
@@ -61,33 +64,16 @@ export const SearchBar = ({ data, onChange }: TSearchBarProps) => {
 			ref={containerRef}
 		>
 			<div className={styles.wrapper}>
-				<div
-					className={styles.searchIcon}
-					onClick={() => handleReset()}
-				>
-					<Search size={ICON_SIZE_M} strokeWidth={ICON_STROKE_M} />
-				</div>
 				<input
 					className={styles.input}
 					type='text'
 					onChange={handleInputChange}
 					value={searchValue}
+					onClick={() => setPanelVisibility(true)}
+					placeholder={placeHolder}
 				/>
-				<div
-					className={styles.switch}
-					onClick={() => setPanelVisibility(!isPanelVisible)}
-				>
-					{isPanelVisible ? (
-						<ChevronUp
-							size={ICON_SIZE_M}
-							strokeWidth={ICON_STROKE_M}
-						/>
-					) : (
-						<ChevronDown
-							size={ICON_SIZE_M}
-							strokeWidth={ICON_STROKE_M}
-						/>
-					)}
+				<div className={styles.searchIcon} onClick={handleClick}>
+					<Search size={ICON_SIZE_M} strokeWidth={ICON_STROKE_L} />
 				</div>
 			</div>
 			{isPanelVisible && (

@@ -118,6 +118,7 @@ const SandBox = () => {
 
 					<SearchBar
 						data={stringList}
+						placeHolder={'Recherche...'}
 						onChange={handleSearch}
 					></SearchBar>
 				</Flex>
