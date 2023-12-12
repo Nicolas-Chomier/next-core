@@ -21,8 +21,8 @@
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	width: 37px;
-	height: 37px;
+	width: 35px;
+	height: 35px;
 	border-radius: 100%;
 	background-color: var(--accent-color);
 }
