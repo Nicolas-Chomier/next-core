@@ -50,10 +50,10 @@ const DisplayUserTable = (handleDelete: (id: number) => void): ReactNode => {
 	};
 
 	// Query hook
-	const { isLoading, isError, data, error } = useQuery(
-		['getAllUser'],
-		fetchAllUser,
-	);
+	const { isLoading, isError, data, error } = useQuery({
+		queryKey: ['getAllUser'],
+		queryFn: fetchAllUser,
+	});
 
 	// JSX
 	if (isLoading) {
@@ -153,9 +153,10 @@ const AccountManagement = () => {
 		updateMutate(payload);
 	};
 	// Change password
-	const mutationUpdate = useMutation(changePassword, {
+	const mutationUpdate = useMutation({
+		mutationFn: changePassword,
 		onSuccess: () => {
-			queryClient.invalidateQueries(['getAllUser']);
+			queryClient.invalidateQueries({ queryKey: ['getAllUser'] });
 			setActionMessage(`Password changed with success !`);
 		},
 		onError: (error) => {
@@ -169,9 +170,10 @@ const AccountManagement = () => {
 		const payload = { id: id, token: TOKEN };
 		deleteMutate(payload);
 	};
-	const mutationDelete = useMutation(deleteUserById, {
+	const mutationDelete = useMutation({
+		mutationFn: deleteUserById,
 		onSuccess: (data) => {
-			queryClient.invalidateQueries(['getAllUser']);
+			queryClient.invalidateQueries({ queryKey: ['getAllUser'] });
 			setActionMessage(`User n°${data.userId} deleted with success !`);
 		},
 		onError: (error) => {
@@ -186,9 +188,10 @@ const AccountManagement = () => {
 		console.log('from page payload', payload);
 		addMutate(payload);
 	};
-	const mutationAdd = useMutation(addNewUser, {
+	const mutationAdd = useMutation({
+		mutationFn: addNewUser,
 		onSuccess: (data) => {
-			queryClient.invalidateQueries(['getAllUser']);
+			queryClient.invalidateQueries({ queryKey: ['getAllUser'] });
 			setActionMessage(`${data.userName} added with success !`);
 		},
 		onError: (error) => {
