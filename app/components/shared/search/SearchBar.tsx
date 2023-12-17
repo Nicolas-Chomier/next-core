@@ -72,8 +72,12 @@ export const SearchBar = ({ data, placeHolder, onChange }: TSearchBarProps) => {
 					onClick={() => setPanelVisibility(true)}
 					placeholder={placeHolder}
 				/>
-				<div className={styles.searchIcon} onClick={handleClick}>
-					<Search size={ICON_SIZE_M} strokeWidth={ICON_STROKE_L} />
+				<div className={styles.icon_wrapper} onClick={handleClick}>
+					<Search
+						size={ICON_SIZE_M}
+						strokeWidth={ICON_STROKE_L}
+						className={styles.icon}
+					/>
 				</div>
 			</div>
 			{isPanelVisible && (
