@@ -7,7 +7,6 @@ import { Virtuoso } from 'react-virtuoso';
 // Hooks and utilities
 import { padString } from '@/app/functions/padString';
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
-import { setDarkMode } from '@/app/store/darkMode';
 import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
@@ -89,12 +88,9 @@ type TLargeListProps = {
 };
 const LargeList = ({ content, handleClick }: TLargeListProps) => {
 	const size = content.length;
-	const { isDarkMode } = setDarkMode();
 	return (
 		<Virtuoso
-			className={`${isDarkMode ? 'dark-theme' : ''} ${
-				styles.large_list_shape
-			}`}
+			className={styles.large_list_shape}
 			style={{
 				height: `${size <= 8 ? size * 36.8 : 300}px`,
 			}}

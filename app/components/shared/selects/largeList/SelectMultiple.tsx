@@ -6,7 +6,6 @@ import { Virtuoso } from 'react-virtuoso';
 // Local components
 // Hooks and utilities
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
-import { setDarkMode } from '@/app/store/darkMode';
 import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import {
@@ -98,8 +97,6 @@ type TBadgeDisplayerProps = {
 	handleClick: (item: string) => void;
 };
 const BadgeDisplayer = ({ field, handleClick }: TBadgeDisplayerProps) => {
-	const { isDarkMode } = setDarkMode();
-
 	if (!Array.isArray(field?.value) || field?.value.length === 0) {
 		return null;
 	}
@@ -110,9 +107,7 @@ const BadgeDisplayer = ({ field, handleClick }: TBadgeDisplayerProps) => {
 				<span
 					key={`Badge-${index}`}
 					onClick={() => handleClick(item)}
-					className={`${isDarkMode ? 'dark-theme' : ''} ${
-						styles.badge
-					}`}
+					className={styles.badge}
 				>
 					{capitalize(item.substring(0, 4) + '...')}
 				</span>
@@ -127,15 +122,8 @@ type TResetButtonProps = {
 	handleClick: () => void;
 };
 const ResetButton = ({ field, handleClick }: TResetButtonProps) => {
-	const { isDarkMode } = setDarkMode();
-
 	return (
-		<button
-			onClick={() => handleClick()}
-			className={`${isDarkMode ? 'dark-theme' : ''} ${
-				styles.reset_button
-			}`}
-		>
+		<button onClick={() => handleClick()} className={styles.reset_button}>
 			{!field.value || field.value.length === 0 ? null : (
 				<XCircle
 					size={ICON_SIZE_M}
@@ -173,14 +161,11 @@ type TLargeListProps = {
 	handleClick: (item: string) => void;
 };
 const LargeList = ({ content, handleClick }: TLargeListProps) => {
-	const { isDarkMode } = setDarkMode();
 	const size = content.length;
 
 	return (
 		<Virtuoso
-			className={`${isDarkMode ? 'dark-theme' : ''} ${
-				styles.large_list_shape
-			}`}
+			className={styles.large_list_shape}
 			style={{
 				height: `${size <= 8 ? size * 36.8 : 300}px`,
 			}}

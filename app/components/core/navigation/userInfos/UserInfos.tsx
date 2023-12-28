@@ -6,7 +6,6 @@ import { Avatar, Text } from '@radix-ui/themes';
 import { LoadingSpinner } from '@/app/components/shared/layout/loadingSpinner/LoadingSpinner';
 // Hooks and utilities
 import { useSession } from 'next-auth/react';
-import { setDarkMode } from '@/app/store/darkMode';
 import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 // Styles
@@ -16,16 +15,13 @@ export const UserInfos = () => {
 	const { data: session } = useSession();
 	const name = session?.user?.name;
 	const rank = session?.user?.rank;
-	const { isDarkMode } = setDarkMode();
 
 	if (!session) {
 		return <LoadingSpinner />;
 	}
 
 	return (
-		<div
-			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container} `}
-		>
+		<div className={styles.container}>
 			<Avatar
 				src='/images/moi.jpg?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop'
 				fallback='NC'

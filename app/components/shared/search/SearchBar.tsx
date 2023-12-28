@@ -5,7 +5,6 @@ import { Search } from 'lucide-react';
 // Local components
 // Hooks and utilities
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
-import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 import { ICON_SIZE_M, ICON_STROKE_L } from '@/config/constantes';
 // Styles
@@ -19,7 +18,7 @@ type TSearchBarProps = {
 };
 
 export const SearchBar = ({ data, placeHolder, onChange }: TSearchBarProps) => {
-	const { isDarkMode } = setDarkMode();
+	/* const { isDarkMode } = setDarkMode(); */
 	const containerRef = useRef(null);
 	// Hook to manage clicks outside the component and close the drop-down menu
 	useOnClickOutside(containerRef, () => setPanelVisibility(false));
@@ -59,10 +58,7 @@ export const SearchBar = ({ data, placeHolder, onChange }: TSearchBarProps) => {
 		[data, searchValue],
 	);
 	return (
-		<div
-			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container}`}
-			ref={containerRef}
-		>
+		<div className={`${styles.container}`} ref={containerRef}>
 			<div className={styles.wrapper}>
 				<input
 					className={styles.input}

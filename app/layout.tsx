@@ -3,7 +3,7 @@
 import { Theme } from '@radix-ui/themes';
 import { AuthProvider } from '@/app/components/core/provider/AuthProvider';
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/darkMode';
+import { useBoundStore } from './store/useBoundStore';
 import QueryProvider from './components/core/provider/QueryProvider';
 // Configuration
 import {
@@ -23,8 +23,7 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const { isDarkMode } = setDarkMode();
-
+	const isDarkMode = useBoundStore((state) => state.isDarkMode);
 	return (
 		<html lang={LANGUAGE} suppressHydrationWarning>
 			<body>

@@ -23,12 +23,9 @@ export const NavigationBar = () => {
 	const isSmartphoneSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_SMARTPHONE);
 	const isTabletSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_TABLET_PORTRAIT);
 	const isLaptopSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_SMALL_LAPTOP);
-	const { isDarkMode } = setDarkMode();
 
 	return (
-		<div
-			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container}`}
-		>
+		<div className={styles.container}>
 			{!isSmartphoneSize && (
 				<div className={styles.link_bar_wrapper}>
 					<LinkBar />

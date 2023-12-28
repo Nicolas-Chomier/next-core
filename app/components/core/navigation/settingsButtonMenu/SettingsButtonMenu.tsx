@@ -16,7 +16,7 @@ import { Tooltip } from '@radix-ui/themes';
 // Hooks and utilities
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { setDarkMode } from '@/app/store/darkMode';
+import { useBoundStore } from '@/app/store/useBoundStore';
 // Configuration
 import { ACCOUNT_MANAGEMENT_PAGE, LANDING_PAGE } from '@/config/core/settings';
 import {
@@ -28,9 +28,11 @@ import {
 import styles from './SettingsButtonMenu.module.css';
 
 export const MultiButtonFrame = () => {
+	// Store
+	const isDarkMode = useBoundStore((state: any) => state.isDarkMode);
+	const toggleDarkMode = useBoundStore((state: any) => state.toggleDarkMode);
 	// Setup
 	const router = useRouter();
-	const { isDarkMode, toggleDarkMode } = setDarkMode();
 	const [isMenuVisible, setMenuVisibility] = useState(false);
 
 	const darkModeIcon = () => {
@@ -46,9 +48,7 @@ export const MultiButtonFrame = () => {
 	return (
 		<div className={styles.multiButtonFrame}>
 			<button
-				className={`${isDarkMode ? 'dark-theme' : ''} ${
-					styles.switch_base
-				} ${styles.toggle_switch}`}
+				className={` ${styles.switch_base} ${styles.toggle_switch}`}
 				onClick={() => setMenuVisibility(!isMenuVisible)}
 			>
 				{isMenuVisible ? (
@@ -132,15 +132,11 @@ const SettingSubSwitch = ({
 	toolTip,
 	children,
 }: TSettingSubSwitchProps) => {
-	const { isDarkMode } = setDarkMode();
-
 	return (
 		<Tooltip content={toolTip || '...'}>
 			<button
 				onClick={handleClick}
-				className={`${isDarkMode ? 'dark-theme' : ''} ${
-					styles.switch_base
-				} ${styles.sub_switch}`}
+				className={`${styles.switch_base} ${styles.sub_switch}`}
 			>
 				{children}
 			</button>

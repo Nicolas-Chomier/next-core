@@ -6,7 +6,6 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 // Hooks and utilities
 import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
 import { capitalize } from '@/app/functions/capitalize';
-import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 import { ICON_SIZE_M, ICON_STROKE_M } from '@/config/constantes';
 // Styles
@@ -25,7 +24,6 @@ export const SelectBasic = ({
 }: TInputSelectProps) => {
 	const [controledContent, setControledContent] = useState<string[]>(['...']);
 	const [toggleIcon, setToggleIcon] = useState(false);
-	const { isDarkMode } = setDarkMode();
 	const selectRef = useRef(null);
 
 	const handleClickOutside = () => {
@@ -51,7 +49,7 @@ export const SelectBasic = ({
 				id={field.name}
 				onChange={handleChange}
 				onClick={() => setToggleIcon(!toggleIcon)}
-				className={`${isDarkMode ? 'dark-theme' : ''} ${styles.select}`}
+				className={styles.select}
 				defaultValue={'DEFAULT'}
 			>
 				<option value='DEFAULT' disabled className={styles.placeHolder}>

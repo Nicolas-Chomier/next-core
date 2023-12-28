@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/darkMode';
 import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import { LANDING_PAGE } from '@/config/core/settings';
@@ -20,7 +19,6 @@ import {
 import styles from './LinkButtonMenu.module.css';
 
 export const LinkButton = () => {
-	const { isDarkMode } = setDarkMode();
 	const [showMenu, setShowMenu] = useState(false);
 
 	const toggleMenu = () => setShowMenu(!showMenu);
@@ -37,9 +35,7 @@ export const LinkButton = () => {
 	return (
 		<div className={styles.multiButtonFrame}>
 			<button
-				className={`${isDarkMode ? 'dark-theme' : ''} ${
-					styles.switch_base
-				} ${styles.toggle_switch}`}
+				className={` ${styles.switch_base} ${styles.toggle_switch}`}
 				onClick={toggleMenu}
 			>
 				{menuIcon}
@@ -53,9 +49,7 @@ export const LinkButton = () => {
 					<div key={page.folderName} className={styles.button_shape}>
 						<Link
 							href={`${LANDING_PAGE}/${page.folderName}`}
-							className={`${isDarkMode ? 'dark-theme' : ''} ${
-								styles.link_button
-							}`}
+							className={styles.link_button}
 						>
 							<p className={styles.text}>
 								{capitalize(page.givenName)}

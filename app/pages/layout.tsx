@@ -6,7 +6,7 @@ import React from 'react';
 import { NavigationBar } from '@/app/components/core/navigation/navigationBar/NavigationBar';
 import { Footer } from '@/app/components/shared/layout/footer/Footer';
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/darkMode';
+import { useBoundStore } from '../store/useBoundStore';
 // Configuration
 // Styles
 import '@/app/styles/backGround.css';
@@ -35,12 +35,13 @@ const customFont = Plus_Jakarta_Sans({
 });
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
-	const { isDarkMode } = setDarkMode();
+	//const { isDarkMode } = createDarkModeStore();
+	const isDarkMode = useBoundStore((state) => state.isDarkMode);
 	return (
 		<main
-			className={`${
-				isDarkMode ? 'dark_background' : 'light_background'
-			} ${customFont.className}`}
+			className={`
+			${isDarkMode ? 'dark-theme' : ''} 
+			${isDarkMode ? 'dark_background' : 'light_background'} ${customFont.className}`}
 		>
 			<NavigationBar />
 			<div>{children}</div>

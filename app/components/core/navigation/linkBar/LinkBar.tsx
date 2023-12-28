@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/darkMode';
 import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import { LANDING_PAGE } from '@/config/core/settings';
@@ -18,12 +17,9 @@ export const LinkBar = () => {
 	// SetUp
 	const pathname = usePathname();
 	const pageName = pathname.split('/').at(-1);
-	const { isDarkMode } = setDarkMode();
 
 	return (
-		<div
-			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container}`}
-		>
+		<div className={styles.container}>
 			{PAGES_NAMES.map((page, index) => {
 				const path = LANDING_PAGE + '/' + page.folderName;
 

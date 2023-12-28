@@ -7,7 +7,6 @@ import subDays from 'date-fns/subDays';
 import { X } from 'lucide-react';
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/darkMode';
 import { capitalize } from '@/app/functions/capitalize';
 // Configuration
 import {
@@ -35,7 +34,6 @@ export const DatePickers = ({
 	placeHolder,
 	minDate,
 }: TDatePickerProps) => {
-	const { isDarkMode } = setDarkMode();
 	const [datesRange, setDatesRange] = useState<[Date | null, Date | null]>([
 		null,
 		null,
@@ -74,9 +72,7 @@ export const DatePickers = ({
 				onChange={(update: [Date | null, Date | null]) => {
 					setDatesRange(update), handleChange(update);
 				}}
-				className={`${isDarkMode ? 'dark-theme' : ''} ${
-					styles.date_picker
-				}`}
+				className={styles.date_picker}
 			/>
 			<div className={styles.button} onClick={() => handleReset()}>
 				<X

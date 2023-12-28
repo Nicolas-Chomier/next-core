@@ -3,7 +3,6 @@ import React from 'react';
 // External modules / Third-party libraries
 // Local components
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 // Styles
 import styles from './FormButton.module.css';
@@ -20,16 +19,12 @@ export const FormButton = ({
 	isLoading,
 	label = 'Validation',
 }: TFormButtonProps) => {
-	const { isDarkMode } = setDarkMode();
-
 	const renderButtonContent = () => {
 		if (display && !isLoading) {
 			return (
 				<button
 					type='submit'
-					className={`${isDarkMode ? 'dark-theme' : ''} ${
-						styles.container
-					} ${styles.button}`}
+					className={` ${styles.container} ${styles.button}`}
 				>
 					{label}
 				</button>
@@ -38,11 +33,7 @@ export const FormButton = ({
 			return <LoadingSpinner />;
 		} else {
 			return (
-				<div
-					className={`${isDarkMode ? 'dark-theme' : ''} ${
-						styles.container
-					} ${styles.dummy}`}
-				>
+				<div className={`${styles.container} ${styles.dummy}`}>
 					{label}
 				</div>
 			);

@@ -7,7 +7,6 @@ import { MultiButtonFrame } from '@/app/components/core/navigation/settingsButto
 import { LinkButton } from '@/app/components/core/navigation/linkButtonMenu/LinkButtonMenu';
 import { Title } from '@/app/components/core/navigation/title/Title';
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/darkMode';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 // Configuration
 import { MEDIAQUERY_BREAKPOINT_SMARTPHONE } from '@/config/constantes';
@@ -18,12 +17,9 @@ type TTinyBarProps = {};
 
 export const TinyBar = ({}: TTinyBarProps) => {
 	const isSmartphoneSize = useMediaQuery(MEDIAQUERY_BREAKPOINT_SMARTPHONE);
-	const { isDarkMode } = setDarkMode();
 
 	return (
-		<div
-			className={`${isDarkMode ? 'dark-theme' : ''} ${styles.container}`}
-		>
+		<div className={styles.container}>
 			{!isSmartphoneSize && (
 				<div className={styles.title}>
 					<Title />

@@ -11,8 +11,6 @@ import { FormButton } from '@/app/components/shared/buttons/FormButton';
 import { SearchBar } from '@/app/components/shared/search/SearchBar';
 import { Header } from '@/app/components/shared/layout/header/Header';
 
-import { Button } from 'vite-scl';
-
 // Générer 10 strings aléatoires
 let stringList: any = [];
 for (let i = 0; i < 100; i++) {
@@ -77,7 +75,7 @@ const SandBox = () => {
 							/>
 						)}
 					/>
-					<Button></Button>
+
 					{/* 	<Controller
 						control={control}
 						name='multiple'

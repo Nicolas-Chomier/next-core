@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 // Hooks and utilities
 import { capitalize } from '@/app/functions/capitalize';
 import { handleKeyDown } from '@/app/functions/handleKeyDown';
-import { setDarkMode } from '@/app/store/darkMode';
 // Configuration
 // Styles
 import styles from './InputText.module.css';
@@ -29,8 +28,6 @@ export const InputText = ({
 	setValue,
 	errors,
 }: TInputTextProps) => {
-	const { isDarkMode } = setDarkMode();
-
 	useEffect(() => {
 		if (disabled) setValue(label, null);
 	}, [disabled, label, setValue]);
@@ -45,7 +42,7 @@ export const InputText = ({
 				placeholder={capitalize(label) || placeholder}
 				onKeyDown={(e) => handleKeyDown(e, type)}
 				disabled={disabled}
-				className={`${isDarkMode ? 'dark-theme' : ''} ${styles.input} ${
+				className={`${styles.input} ${
 					errors[label] && styles.input_error
 				}`}
 			/>
