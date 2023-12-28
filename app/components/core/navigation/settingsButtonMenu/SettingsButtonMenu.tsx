@@ -29,8 +29,8 @@ import styles from './SettingsButtonMenu.module.css';
 
 export const MultiButtonFrame = () => {
 	// Store
-	const isDarkMode = useBoundStore((state: any) => state.isDarkMode);
-	const toggleDarkMode = useBoundStore((state: any) => state.toggleDarkMode);
+	const isDarkMode = useBoundStore((state) => state.isDarkMode);
+	const toggleDarkMode = useBoundStore((state) => state.toggleDarkMode);
 	// Setup
 	const router = useRouter();
 	const [isMenuVisible, setMenuVisibility] = useState(false);

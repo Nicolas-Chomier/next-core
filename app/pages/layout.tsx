@@ -11,21 +11,6 @@ import { useBoundStore } from '../store/useBoundStore';
 // Styles
 import '@/app/styles/backGround.css';
 // Fonts
-
-//import { Quicksand } from 'next/font/google';
-/* const customFont = Quicksand({
-	subsets: ['latin'],
-	weight: '500',
-	style: ['normal'],
-}); */
-
-/* import { Signika_Negative } from 'next/font/google';
-const customFont = Signika_Negative({
-	subsets: ['latin'],
-	weight: '300',
-	style: ['normal'],
-}); */
-
 import { Plus_Jakarta_Sans } from 'next/font/google';
 
 const customFont = Plus_Jakarta_Sans({
@@ -50,3 +35,19 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 	);
 };
 export default LandingLayout;
+
+//FONT TESTS
+
+//import { Quicksand } from 'next/font/google';
+/* const customFont = Quicksand({
+	subsets: ['latin'],
+	weight: '500',
+	style: ['normal'],
+}); */
+
+/* import { Signika_Negative } from 'next/font/google';
+const customFont = Signika_Negative({
+	subsets: ['latin'],
+	weight: '300',
+	style: ['normal'],
+}); */

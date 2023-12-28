@@ -8,7 +8,7 @@ import { LinkBar } from '@/app/components/core/navigation/linkBar/LinkBar';
 import { LinkButton } from '@/app/components/core/navigation/linkButtonMenu/LinkButtonMenu';
 import { Title } from '@/app/components/core/navigation/title/Title';
 // Hooks and utilities
-import { setDarkMode } from '@/app/store/darkMode';
+import { setDarkMode } from '@/app/store/darkMode00';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 // Configuration
 import {
