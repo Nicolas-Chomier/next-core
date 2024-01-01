@@ -15,6 +15,7 @@ import {
 } from '@/config/constantes';
 // Styles
 import '@radix-ui/themes/styles.css';
+import 'my-library/dist/style.css';
 import './styles/globals.css';
 import './styles/variables.css';
 

@@ -1,6 +1,7 @@
 :root {
 	/* MAIN THEME COLOR */
 	--accent-color: #7b61ff;
+	--second-accent-color: #e93d82;
 	--success-color: #3e9b4f;
 	--warning-color: #ffba18;
 	--danger-color: #e54d2e;
@@ -18,6 +19,7 @@
 .dark-theme {
 	/* MAIN THEME COLOR */
 	--accent-color: #5472e4;
+	--second-accent-color: #e54666;
 	--success-color: #48b65c;
 	--warning-color: #f7cb65;
 	--danger-color: #fc7054;

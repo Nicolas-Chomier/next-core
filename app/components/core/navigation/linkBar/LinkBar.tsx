@@ -18,6 +18,10 @@ export const LinkBar = () => {
 	const pathname = usePathname();
 	const pageName = pathname.split('/').at(-1);
 
+	if (PAGES_NAMES && PAGES_NAMES.length === 0) {
+		return <div></div>;
+	}
+
 	return (
 		<div className={styles.container}>
 			{PAGES_NAMES.map((page, index) => {
